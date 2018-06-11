@@ -15,10 +15,10 @@ enum PromptType {
     case upgradePin
     case recommendRescan
     case noPasscode
-    case shareData
+    //case shareData
 
     static var defaultOrder: [PromptType] = {
-        return [.recommendRescan, .upgradePin, .paperKey, .noPasscode, .biometrics, .shareData]
+        return [.recommendRescan, .upgradePin, .paperKey, .noPasscode, .biometrics]//, .shareData]
     }()
     
 
@@ -29,7 +29,7 @@ enum PromptType {
         case .upgradePin: return S.Prompts.UpgradePin.title
         case .recommendRescan: return S.Prompts.RecommendRescan.title
         case .noPasscode: return S.Prompts.NoPasscode.title
-        case .shareData: return S.Prompts.ShareData.title
+        //case .shareData: return S.Prompts.ShareData.title
         }
     }
     
@@ -40,7 +40,7 @@ enum PromptType {
         case .upgradePin: return "upgradePinPrompt"
         case .recommendRescan: return "recommendRescanPrompt"
         case .noPasscode: return "noPasscodePrompt"
-        case .shareData: return "shareDataPrompt"
+        //case .shareData: return "shareDataPrompt"
         }
     }
 
@@ -51,7 +51,7 @@ enum PromptType {
         case .upgradePin: return S.Prompts.UpgradePin.body
         case .recommendRescan: return S.Prompts.RecommendRescan.body
         case .noPasscode: return S.Prompts.NoPasscode.body
-        case .shareData: return S.Prompts.ShareData.body
+        //case .shareData: return S.Prompts.ShareData.body
         }
     }
 
@@ -63,7 +63,7 @@ enum PromptType {
         case .upgradePin: return .promptUpgradePin
         case .recommendRescan: return .recommendRescan
         case .noPasscode: return nil
-        case .shareData: return .promptShareData
+        //case .shareData: return .promptShareData
         }
     }
 
@@ -79,8 +79,8 @@ enum PromptType {
             return state.recommendRescan
         case .noPasscode:
             return !LAContext.isPasscodeEnabled
-        case .shareData:
-            return !UserDefaults.hasAquiredShareDataPermission && !UserDefaults.hasPromptedShareData
+        //case .shareData:
+        //    return !UserDefaults.hasAquiredShareDataPermission && !UserDefaults.hasPromptedShareData
         }
     }
 }

@@ -126,10 +126,10 @@ extension UserDefaults {
         set { defaults.set(newValue, forKey: customNodePortKey) }
     }
 
-    static var hasPromptedShareData: Bool {
-        get { return defaults.bool(forKey: hasPromptedBiometricsKey) }
-        set { defaults.set(newValue, forKey: hasPromptedBiometricsKey) }
-    }
+    //static var hasPromptedShareData: Bool {
+    //    get { return defaults.bool(forKey: hasPromptedBiometricsKey) }
+    //    set { defaults.set(newValue, forKey: hasPromptedBiometricsKey) }
+    //}
 
     static var hasShownWelcome: Bool {
         get { return defaults.bool(forKey: hasShownWelcomeKey) }

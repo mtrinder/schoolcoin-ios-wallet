@@ -63,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return false // disable extensions such as custom keyboards for security purposes
     }
 
-    func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+    /*func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
         applicationController.application(application, didRegister: notificationSettings)
     }
 
@@ -77,7 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         return applicationController.open(url: url)
-    }
+    }*/
 
 }
 

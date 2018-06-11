@@ -331,7 +331,7 @@ class ModalPresenter : Subscriber, Trackable {
         let settingsNav = UINavigationController()
         let sections = ["Wallet", "Manage", "MaxWallet", "Advanced"]
         var rows = [
-            "Wallet": [Setting(title: S.Settings.importTile, callback: { [weak self] in
+            "Wallet": [/*Setting(title: S.Settings.importTile, callback: { [weak self] in
                     guard let myself = self else { return }
                     guard let walletManager = myself.walletManager else { return }
                     let importNav = ModalNavigationController()
@@ -347,7 +347,7 @@ class ModalPresenter : Subscriber, Trackable {
                     settingsNav.dismiss(animated: true, completion: {
                         myself.topViewController?.present(importNav, animated: true, completion: nil)
                     })
-                }),
+                }),*/
                Setting(title: S.Settings.wipe, callback: { [weak self] in
                     guard let myself = self else { return }
                     guard let walletManager = myself.walletManager else { return }

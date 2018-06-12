@@ -95,13 +95,19 @@ std::vector<unsigned char> vchKey;
     CryptoPP::Integer* intA = new CryptoPP::Integer([a UTF8String]);
     CryptoPP::Integer* intB = new CryptoPP::Integer([b UTF8String]);
 
-    std::vector<unsigned char> hex;
+//    std::vector<unsigned char> hex;
+    std::vector<unsigned char> bytes;
     
-    curveWithSchnorr->ModuloAddToHex(*intA, *intB, hex);
+    curveWithSchnorr->ModuloAddToHex(*intA, *intB, bytes);
 
-    unsigned char * ucstr = hex.data();
+//    unsigned char * ucstr = hex.data();
+//    return [[NSString alloc] initWithBytes: ucstr length:hex.size() encoding:NSASCIIStringEncoding];
+
+    unsigned char * data = bytes.data();
+    NSMutableString *hex = [NSMutableString string];
+    for (int i=0; i<bytes.size(); i++) [hex appendFormat:@"%02x", data[i]];
     
-    return [[NSString alloc] initWithBytes: ucstr length:hex.size() encoding:NSASCIIStringEncoding];
+    return [NSString stringWithString:hex];
 }
 
 - (NSString *)CurvePointMultiplyAddHex:(NSString *)a

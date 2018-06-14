@@ -38,7 +38,7 @@ struct C {
     static let null = "(null)"
     static let maxMemoLength = 250
     static let feedbackEmail = "contact@maxcoinproject.org"
-    static let reviewLink = "https://itunes.apple.com/app"//TODO: add once in the AppStore
+    static let reviewLink = "https://itunes.apple.com/us/app/maxcoin-wallet/id1397280924"
     static var standardPort: Int {
         return E.isTestnet ? 19335 : 9333
     }

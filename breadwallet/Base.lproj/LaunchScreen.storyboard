@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeaderGradient" translatesAutoresizingMaskIntoConstraints="NO" id="jUk-zo-wxl">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashGradient" translatesAutoresizingMaskIntoConstraints="NO" id="jUk-zo-wxl">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="ZCd-WZ-H0t">
@@ -49,7 +49,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="HeaderGradient" width="640" height="272"/>
         <image name="Logo" width="41" height="41"/>
+        <image name="SplashGradient" width="640" height="272"/>
     </resources>
 </document>

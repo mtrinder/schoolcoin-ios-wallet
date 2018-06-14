@@ -27,7 +27,7 @@ extension UIView {
     }
 
     private func addFallbackImageBackground() {
-        let image = UIImageView(image: #imageLiteral(resourceName: "HeaderGradient"))
+        let image = UIImageView(image: #imageLiteral(resourceName: "SplashGradient"))
         image.contentMode = .scaleToFill
         addSubview(image)
         image.constrain(toSuperviewEdges: nil)

@@ -20,7 +20,6 @@
 - (void)SetPublicKey:(NSData *) privKey;
 - (NSString *)GetSecretKeyHex;
 - (NSString *)GetPublicKeyHex;
-- (NSString *)GetUncompressedPublicKeyHex;
 
 // BIP32 Elliptic Curve Functions
 //

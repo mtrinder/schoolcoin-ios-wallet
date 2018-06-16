@@ -32,10 +32,6 @@ class BRSchnorr {
         return (schnorr.getPublicKeyHex()?.description)!
     }
 
-    func GetUncompressedPublicKey () -> String {
-        return (schnorr.getUncompressedPublicKeyHex()?.description)!
-    }
-    
     func CurveModuloAddition(a: String, b: String) -> Data? {
         let modAddHex = schnorr.curveModuloAddHex(a + "h", b + "h")
         return (modAddHex?.hexToData)
@@ -46,11 +42,11 @@ class BRSchnorr {
         return (modAddHex?.hexToData)
     }
     
-    func SignTxHash (hash: Data) -> Data {
+    func SignTxHash (hash: Data) -> Data? {
         let signedHex = schnorr.schnorrSignSig(hash)
 
-        let data = (signedHex?.hexToData)!
-        let check = VerifyTxHash(hash: hash, sig: data)
+        let data = (signedHex?.hexToData)
+        let check = VerifyTxHash(hash: hash, sig: data!)
         if (check == 1){
             return data
         }

@@ -15,8 +15,6 @@
 
 SchnorrCPP::CCurve *curveWithSchnorr;
 
-std::vector<unsigned char> vchKey;
-
 - (id)init {
     self = [super init];
     if (self) {
@@ -32,28 +30,25 @@ std::vector<unsigned char> vchKey;
 
 - (void) SetSecretKey: (NSData *) privKeyData
 {
-    vchKey.clear();
-    
     unsigned char* array = (unsigned char*) [privKeyData bytes];
     
-    vchKey = std::vector<unsigned char>(array, array + [privKeyData length]);
+    std::vector<unsigned char> vchKey = std::vector<unsigned char>(array, array + [privKeyData length]);
     
     curveWithSchnorr->SetVchSecretKey(vchKey);
 }
 
 - (void) SetPublicKey: (NSData *) pubKeyData
 {
-    vchKey.clear();
-    
     unsigned char* array = (unsigned char*) [pubKeyData bytes];
     
-    vchKey = std::vector<unsigned char>(array, array + [pubKeyData length]);
+    std::vector<unsigned char> vchKey = std::vector<unsigned char>(array, array + [pubKeyData length]);
     
     curveWithSchnorr->SetVchPublicKey(vchKey);
 }
 
 - (NSString *)GetSecretKeyHex
 {
+    std::vector<unsigned char> vchKey;
     curveWithSchnorr->GetVchSecretKey(vchKey);
     
     unsigned char * data = vchKey.data();
@@ -65,19 +60,9 @@ std::vector<unsigned char> vchKey;
 
 - (NSString *)GetPublicKeyHex
 {
+    std::vector<unsigned char> vchKey;
     curveWithSchnorr->GetVchPublicKey(vchKey);
  
-    unsigned char * data = vchKey.data();
-    NSMutableString *hex = [NSMutableString string];
-    for (int i=0; i<vchKey.size(); i++) [hex appendFormat:@"%02x", data[i]];
-    
-    return [NSString stringWithString:hex];
-}
-
-- (NSString *)GetUncompressedPublicKeyHex
-{
-    curveWithSchnorr->GetVchUncompressedPublicKey(vchKey);
-    
     unsigned char * data = vchKey.data();
     NSMutableString *hex = [NSMutableString string];
     for (int i=0; i<vchKey.size(); i++) [hex appendFormat:@"%02x", data[i]];
@@ -95,13 +80,9 @@ std::vector<unsigned char> vchKey;
     CryptoPP::Integer* intA = new CryptoPP::Integer([a UTF8String]);
     CryptoPP::Integer* intB = new CryptoPP::Integer([b UTF8String]);
 
-//    std::vector<unsigned char> hex;
     std::vector<unsigned char> bytes;
     
     curveWithSchnorr->ModuloAddToHex(*intA, *intB, bytes);
-
-//    unsigned char * ucstr = hex.data();
-//    return [[NSString alloc] initWithBytes: ucstr length:hex.size() encoding:NSASCIIStringEncoding];
 
     unsigned char * data = bytes.data();
     NSMutableString *hex = [NSMutableString string];

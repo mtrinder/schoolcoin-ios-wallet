@@ -101,6 +101,7 @@ class WalletCoordinator : Subscriber, Trackable {
         progressTimer?.invalidate()
         progressTimer = nil
         store.perform(action: WalletChange.setSyncingState(.success))
+        store.perform(action: WalletChange.setIsRescanning(false))
         endActivity()
     }
 

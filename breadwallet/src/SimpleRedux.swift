@@ -175,8 +175,9 @@ class Store {
     }
 
     func unsubscribe(_ subscriber: Subscriber) {
-        subscriptions.removeValue(forKey: subscriber.hashValue)
-        triggers.removeValue(forKey: subscriber.hashValue)
+        let hashValue = subscriber.hashValue
+        subscriptions.removeValue(forKey: hashValue)
+        triggers.removeValue(forKey: hashValue)
     }
 
     //MARK: - Private

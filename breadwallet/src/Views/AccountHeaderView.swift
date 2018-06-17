@@ -71,7 +71,7 @@ class AccountHeaderView : UIView, AccountGradientDrawable, Subscriber {
         didSet { setBalances() }
     }
     private var logo: UIImageView = {
-        let image = UIImageView(image: #imageLiteral(resourceName: "SplashIcon"))
+        let image = UIImageView(image: #imageLiteral(resourceName: "Logo"))
         image.contentMode = .scaleAspectFit
         return image
     }()

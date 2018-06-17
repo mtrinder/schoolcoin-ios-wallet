@@ -574,11 +574,17 @@ class BRPeerManager {
         { (info, error) in // syncStopped
             guard let info = info else { return }
             let err = BRPeerManagerError.posixError(errorCode: error, description: String(cString: strerror(error)))
-            Unmanaged<BRPeerManager>.fromOpaque(info).takeUnretainedValue().listener.syncStopped(error != 0 ? err : nil)
+            do {
+                try Unmanaged<BRPeerManager>.fromOpaque(info).takeUnretainedValue().listener.syncStopped(error != 0 ? err : nil)
+            }
+            catch { }
         },
         { (info) in // txStatusUpdate
             guard let info = info else { return }
-            Unmanaged<BRPeerManager>.fromOpaque(info).takeUnretainedValue().listener.txStatusUpdate()
+            do {
+                try Unmanaged<BRPeerManager>.fromOpaque(info).takeUnretainedValue().listener.txStatusUpdate()
+            }
+            catch { }
         },
         { (info, replace, blocks, blocksCount) in // saveBlocks
             guard let info = info else { return }
@@ -588,7 +594,10 @@ class BRPeerManager {
         { (info, replace, peers, peersCount) in // savePeers
             guard let info = info else { return }
             let peerList = [BRPeer](UnsafeBufferPointer(start: peers, count: peersCount))
-            Unmanaged<BRPeerManager>.fromOpaque(info).takeUnretainedValue().listener.savePeers(replace != 0, peerList)
+            do {
+                try Unmanaged<BRPeerManager>.fromOpaque(info).takeUnretainedValue().listener.savePeers(replace != 0, peerList)
+            }
+            catch { }
         },
         { (info) -> Int32 in // networkIsReachable
             guard let info = info else { return 0 }

@@ -234,6 +234,11 @@ class SendViewController : UIViewController, Subscriber, ModalPresentable, Track
             guard amount.rawValue <= (walletManager.wallet?.maxOutputAmount ?? 0) else {
                 return showAlert(title: S.Alert.error, message: S.Send.insufficientFunds, buttonLabel: S.Button.ok)
             }
+            if let peerManager = walletManager.peerManager {
+                guard peerManager.isConnected else {
+                    return showAlert(title: S.Alert.error, message: S.NodeSelector.notConnected, buttonLabel: S.Button.ok)
+                }
+            }
             guard sender.createTransaction(amount: amount.rawValue, to: address) else {
                 return showAlert(title: S.Alert.error, message: S.Send.createTransactionError, buttonLabel: S.Button.ok)
             }
@@ -290,6 +295,12 @@ class SendViewController : UIViewController, Subscriber, ModalPresentable, Track
     private func send() {
         guard let rate = store.state.currentRate else { return }
         guard let feePerKb = walletManager.wallet?.feePerKb else { return }
+
+        if let peerManager = walletManager.peerManager {
+            guard peerManager.isConnected else {
+                return showAlert(title: S.Alert.error, message: S.NodeSelector.notConnected, buttonLabel: S.Button.ok)
+            }
+        }
 
         sender.send(biometricsMessage: S.VerifyPin.touchIdMessage,
                     rate: rate,

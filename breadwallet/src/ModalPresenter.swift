@@ -240,6 +240,14 @@ class ModalPresenter : Subscriber, Trackable {
             return nil
         }
         guard let walletManager = walletManager else { return nil }
+        if let peerManager = walletManager.peerManager {
+            guard peerManager.isConnected else {
+                let alert = UIAlertController(title: S.Alert.error, message: S.NodeSelector.notConnected, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: S.Button.ok, style: .cancel, handler: nil))
+                topViewController?.present(alert, animated: true, completion: nil)
+                return nil
+            }
+        }
         guard let kvStore = walletManager.apiClient?.kv else { return nil }
         let sendVC = SendViewController(store: store, sender: Sender(walletManager: walletManager, kvStore: kvStore, store: store), walletManager: walletManager, initialRequest: currentRequest)
         currentRequest = nil

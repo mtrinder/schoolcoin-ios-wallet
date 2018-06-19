@@ -574,30 +574,21 @@ class BRPeerManager {
         { (info, error) in // syncStopped
             guard let info = info else { return }
             let err = BRPeerManagerError.posixError(errorCode: error, description: String(cString: strerror(error)))
-            do {
-                try Unmanaged<BRPeerManager>.fromOpaque(info).takeUnretainedValue().listener.syncStopped(error != 0 ? err : nil)
-            }
-            catch { }
+                Unmanaged<BRPeerManager>.fromOpaque(info).takeUnretainedValue().listener.syncStopped(error != 0 ? err : nil)
         },
         { (info) in // txStatusUpdate
             guard let info = info else { return }
-            do {
-                try Unmanaged<BRPeerManager>.fromOpaque(info).takeUnretainedValue().listener.txStatusUpdate()
-            }
-            catch { }
+                Unmanaged<BRPeerManager>.fromOpaque(info).takeUnretainedValue().listener.txStatusUpdate()
         },
         { (info, replace, blocks, blocksCount) in // saveBlocks
             guard let info = info else { return }
             let blockRefs = [BRBlockRef?](UnsafeBufferPointer(start: blocks, count: blocksCount))
-            Unmanaged<BRPeerManager>.fromOpaque(info).takeUnretainedValue().listener.saveBlocks(replace != 0, blockRefs)
+                Unmanaged<BRPeerManager>.fromOpaque(info).takeUnretainedValue().listener.saveBlocks(replace != 0, blockRefs)
         },
         { (info, replace, peers, peersCount) in // savePeers
             guard let info = info else { return }
             let peerList = [BRPeer](UnsafeBufferPointer(start: peers, count: peersCount))
-            do {
-                try Unmanaged<BRPeerManager>.fromOpaque(info).takeUnretainedValue().listener.savePeers(replace != 0, peerList)
-            }
-            catch { }
+                Unmanaged<BRPeerManager>.fromOpaque(info).takeUnretainedValue().listener.savePeers(replace != 0, peerList)
         },
         { (info) -> Int32 in // networkIsReachable
             guard let info = info else { return 0 }

@@ -435,6 +435,12 @@ class WalletManager : BRWalletListener, BRPeerManagerListener {
                 let timestampResult = Int32(bitPattern: b.pointee.timestamp).subtractingReportingOverflow(Int32(NSTimeIntervalSince1970))
                 guard !timestampResult.1 else { print("skipped block with overflowed timestamp"); continue }
 
+                let height = Int32(bitPattern: b.pointee.height)
+                guard height != BLOCK_UNKNOWN_HEIGHT else {
+                    print("skipped block with invalid blockheight: \(height)")
+                    continue
+                }
+                
                 pk = pk + 1
                 sqlite3_bind_int(sql2, 1, pk)
                 sqlite3_bind_int(sql2, 2, Int32(bitPattern: b.pointee.height))
@@ -573,6 +579,10 @@ class WalletManager : BRWalletListener, BRPeerManagerListener {
             guard let b = BRMerkleBlockNew() else { return blocks }
             let maxTime:UInt32 = 0xC5B03780
             b.pointee.height = UInt32(bitPattern: sqlite3_column_int(sql, 0))
+            guard b.pointee.height != BLOCK_UNKNOWN_HEIGHT else {
+                print("skipped invalid blockheight: \(sqlite3_column_int(sql, 0))")
+                continue
+            }
             b.pointee.nonce = UInt32(bitPattern: sqlite3_column_int(sql, 1))
             b.pointee.target = UInt32(bitPattern: sqlite3_column_int(sql, 2))
             b.pointee.totalTx = UInt32(bitPattern: sqlite3_column_int(sql, 3))

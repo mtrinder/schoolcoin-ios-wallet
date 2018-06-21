@@ -76,7 +76,7 @@ class ApplicationController : Subscriber, Trackable {
                 }
             }
         }
-        updateAssetBundles()
+        //updateAssetBundles()
         if !hasPerformedWalletDependentInitialization && didInitWallet {
             didInitWalletManager()
         }
@@ -123,11 +123,10 @@ class ApplicationController : Subscriber, Trackable {
         DispatchQueue.walletQueue.async {
             walletManager.peerManager?.connect()
         }
-        //Disabled
         exchangeUpdater?.refresh(completion: {})
         //feeUpdater?.refresh()
-        walletManager.apiClient?.kv?.syncAllKeys { print("KV finished syncing. err: \(String(describing: $0))") }
-        walletManager.apiClient?.updateFeatureFlags()
+        //walletManager.apiClient?.kv?.syncAllKeys { print("KV finished syncing. err: \(String(describing: $0))") }
+        //walletManager.apiClient?.updateFeatureFlags()
         if modalPresenter?.walletManager == nil {
             modalPresenter?.walletManager = walletManager
         }
@@ -139,11 +138,10 @@ class ApplicationController : Subscriber, Trackable {
         DispatchQueue.walletQueue.async {
             walletManager.peerManager?.connect()
         }
-        //Disabled
         exchangeUpdater?.refresh(completion: {})
         //feeUpdater?.refresh()
-        walletManager.apiClient?.kv?.syncAllKeys { print("KV finished syncing. err: \(String(describing: $0))") }
-        walletManager.apiClient?.updateFeatureFlags()
+        //walletManager.apiClient?.kv?.syncAllKeys { print("KV finished syncing. err: \(String(describing: $0))") }
+        //walletManager.apiClient?.updateFeatureFlags()
         if modalPresenter?.walletManager == nil {
             modalPresenter?.walletManager = walletManager
         }
@@ -159,7 +157,7 @@ class ApplicationController : Subscriber, Trackable {
         if !store.state.isLoginRequired {
             UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: timeSinceLastExitKey)
         }
-        walletManager?.apiClient?.kv?.syncAllKeys { print("KV finished syncing. err: \(String(describing: $0))") }
+        //walletManager?.apiClient?.kv?.syncAllKeys { print("KV finished syncing. err: \(String(describing: $0))") }
     }
 
     func performFetch(_ completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
@@ -257,13 +255,11 @@ class ApplicationController : Subscriber, Trackable {
     }
 
     private func startDataFetchers() {
-        walletManager?.apiClient?.updateFeatureFlags()
-        initKVStoreCoordinator()
-        //Disabled
+        //walletManager?.apiClient?.updateFeatureFlags()
+        //initKVStoreCoordinator()
         //feeUpdater?.refresh()
         defaultsUpdater?.refresh()
-        walletManager?.apiClient?.events?.up()
-        //Disabled
+        //walletManager?.apiClient?.events?.up()
         exchangeUpdater?.refresh(completion: {
             self.watchSessionManager.walletManager = self.walletManager
             self.watchSessionManager.rate = self.store.state.currentRate
@@ -276,32 +272,32 @@ class ApplicationController : Subscriber, Trackable {
             self.startDataFetchers()
         })
     }
-    
-    private func updateAssetBundles() {
-        DispatchQueue.global(qos: .utility).async { [weak self] in
-            guard let myself = self else { return }
-            myself.noAuthApiClient.updateBundles { errors in
-                for (n, e) in errors {
-                    print("Bundle \(n) ran update. err: \(String(describing: e))")
-                }
-                DispatchQueue.main.async {
-                    let _ = myself.modalPresenter?.supportCenter // Initialize support center
-                }
-            }
-        }
-    }
+    //TODO: What are we losing by not updating these assets?
+//    private func updateAssetBundles() {
+//        DispatchQueue.global(qos: .utility).async { [weak self] in
+//            guard let myself = self else { return }
+//            myself.noAuthApiClient.updateBundles { errors in
+//                for (n, e) in errors {
+//                    print("Bundle \(n) ran update. err: \(String(describing: e))")
+//                }
+//                DispatchQueue.main.async {
+//                    let _ = myself.modalPresenter?.supportCenter // Initialize support center
+//                }
+//            }
+//        }
+//    }
 
-    private func initKVStoreCoordinator() {
-        guard let kvStore = walletManager?.apiClient?.kv else { return }
-        guard kvStoreCoordinator == nil else { return }
-        kvStore.syncAllKeys { error in
-            print("KV finished syncing. err: \(String(describing: error))")
-            self.walletCoordinator?.kvStore = kvStore
-            self.kvStoreCoordinator = KVStoreCoordinator(store: self.store, kvStore: kvStore)
-            self.kvStoreCoordinator?.retreiveStoredWalletInfo()
-            self.kvStoreCoordinator?.listenForWalletChanges()
-        }
-    }
+//    private func initKVStoreCoordinator() {
+//        guard let kvStore = walletManager?.apiClient?.kv else { return }
+//        guard kvStoreCoordinator == nil else { return }
+//        kvStore.syncAllKeys { error in
+//            print("KV finished syncing. err: \(String(describing: error))")
+//            self.walletCoordinator?.kvStore = kvStore
+//            self.kvStoreCoordinator = KVStoreCoordinator(store: self.store, kvStore: kvStore)
+//            self.kvStoreCoordinator?.retreiveStoredWalletInfo()
+//            self.kvStoreCoordinator?.listenForWalletChanges()
+//        }
+//    }
 
     private func offMainInitialization() {
         DispatchQueue.global(qos: .background).async {
@@ -343,11 +339,10 @@ class ApplicationController : Subscriber, Trackable {
 
         group.enter()
         Async.parallel(callbacks: [
-            //Disabled
             { self.exchangeUpdater?.refresh(completion: $0) },
             //{ self.feeUpdater?.refresh(completion: $0) },
-            { self.walletManager?.apiClient?.events?.sync(completion: $0) },
-            { self.walletManager?.apiClient?.updateFeatureFlags(); $0() }
+            //{ self.walletManager?.apiClient?.events?.sync(completion: $0) },
+            //{ self.walletManager?.apiClient?.updateFeatureFlags(); $0() }
             ], completion: {
                 group.leave()
         })

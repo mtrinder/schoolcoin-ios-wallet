@@ -6,7 +6,7 @@
 	<string>NSFileProtectionComplete</string>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.maxcoin.maxwallet</string>
+		<string>group.com.maxcoin.wallet</string>
 	</array>
 </dict>
 </plist>

@@ -219,7 +219,7 @@ extension BRKey {
         return String(cString: addr)
     }
 
-    // MaxWallet version
+    // Maxcoin Wallet version
     mutating func addressMW() -> String? {
         var addr = [CChar](repeating: 0, count: MemoryLayout<BRAddress>.size)
         guard MWKeyAddress(&self, &addr, addr.count) > 0 else { return nil }

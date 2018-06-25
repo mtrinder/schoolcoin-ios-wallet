@@ -3,7 +3,7 @@
 //  breadwallet
 //
 //  Created by MarkTrinder on 6/5/18.
-//  Copyright © 2018 MaxWallet. All rights reserved.
+//  Copyright © 2018 Maxcoin Wallet. All rights reserved.
 //
 //  This is here to allow calling C++ code from the Schnorr Library
 

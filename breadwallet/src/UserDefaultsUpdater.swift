@@ -9,7 +9,7 @@
 import Foundation
 
 private enum AppGroup {
-    static let id = "group.com.maxcoin.maxwallet"
+    static let id = "group.com.maxcoin.wallet"
     static let requestDataKey = "kBRSharedContainerDataWalletRequestDataKey"
     static let receiveAddressKey = "kBRSharedContainerDataWalletReceiveAddressKey"
 }

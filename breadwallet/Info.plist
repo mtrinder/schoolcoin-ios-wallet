@@ -67,10 +67,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.maxcoin.maxwallet</string>
+			<string>com.maxcoin.wallet</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>maxwallet</string>
+				<string>maxcoinwallet</string>
 			</array>
 		</dict>
 		<dict>

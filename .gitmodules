@@ -6,4 +6,4 @@
 	url = https://github.com/breadwallet/unbound.git
 [submodule "Modules/loafwallet-core"]
 	path = Modules/loafwallet-core
-	url = https://github.com/mtrinder/maxwallet-core.git
+url=https://github.com/mtrinder/schoolcoin-core.git

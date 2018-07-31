@@ -41,19 +41,19 @@ extension UIColor {
 
     // MARK: Gradient
     static var gradientStart: UIColor {
-        return UIColor(red: 229.0/255.0, green: 229.0/255.0, blue: 229.0/255.0, alpha: 1.0)
+        return UIColor(red: 56.0/255.0, green: 55.0/255.0, blue: 255.0/255.0, alpha: 1.0)
     }
 
     static var gradientEnd: UIColor {
-        return UIColor(red: 178.0/255.0, green: 178.0/255.0, blue: 178.0/255.0, alpha: 1.0)
+        return UIColor(red: 192.0/255.0, green: 192.0/255.0, blue: 255.0/255.0, alpha: 1.0)
     }
 
     static var accountGradientStart: UIColor {
-        return UIColor(red: 76.0/255.0, green: 152.0/255.0, blue: 252.0/255.0, alpha: 1.0)
+        return UIColor(red: 56.0/255.0, green: 55.0/255.0, blue: 255.0/255.0, alpha: 1.0)
     }
     
     static var accountGradientEnd: UIColor {
-        return UIColor(red: 76.0/255.0, green: 152.0/255.0, blue: 252.0/255.0, alpha: 1.0)
+        return UIColor(red: 192.0/255.0, green: 192.0/255.0, blue: 255.0/255.0, alpha: 1.0)
     }
 
     static var offWhite: UIColor {
@@ -105,7 +105,7 @@ extension UIColor {
     }
 
     static var blue: UIColor {
-        return UIColor(red: 76.0/255.0, green: 152.0/255.0, blue: 252.0/255.0, alpha: 1.0)
+        return UIColor(red: 56.0/255.0, green: 55.0/255.0, blue: 255.0/255.0, alpha: 1.0)
     }
 
     static var whiteTint: UIColor {

@@ -69,12 +69,12 @@ import WebKit
         switch mountPoint {
         // MARK (losh11): - cleanup switch below
             case "/buy":
-                let addr = "https://api.maxcoinwallet.org/buy?address=" + (walletManager.wallet?.receiveAddress)!
+                let addr = "https://api.schoolkoinwallet.org/buy?address=" + (walletManager.wallet?.receiveAddress)!
                 return URL(string: addr)!
             case "/support":
-                return URL(string: "https://api.maxcoinwallet.org/support")!
+                return URL(string: "https://api.schoolkoinwallet.org/support")!
             case "/ea":
-                return URL(string: "https://api.maxcoinwallet.org/ea")!
+                return URL(string: "https://api.schoolkoinwallet.org/ea")!
             default:
                 return URL(string: "http://127.0.0.1:\(server.port)\(mountPoint)")!
         }
@@ -373,7 +373,7 @@ import WebKit
         //MARK (losh11): - improve code which closes webView
         if let url = navigationAction.request.url?.absoluteString{
             let mutableurl = url
-            if mutableurl == "https://api.maxcoinwallet.org/close" {
+            if mutableurl == "https://api.schoolkoinwallet.org/close" {
                 DispatchQueue.main.async {
                     self.closeNow()
                 }

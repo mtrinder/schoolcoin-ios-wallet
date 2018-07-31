@@ -39,7 +39,7 @@ class DefaultCurrencyViewController : UITableViewController, Subscriber {
     }
 
     private let bitcoinLabel = UILabel(font: .customBold(size: 14.0), color: .grayTextTint)
-    private let bitcoinSwitch = UISegmentedControl(items: ["micro (\(S.Symbols.minis))","mini (\(S.Symbols.maxis))", "MAX (\(S.Symbols.max))"])
+    //private let bitcoinSwitch = UISegmentedControl(items: ["micro (\(S.Symbols.minis))","mini (\(S.Symbols.maxis))", "KOIN (\(S.Symbols.max))"])
     private let rateLabel = UILabel(font: .customBody(size: 16.0), color: .darkText)
     private var header: UIView?
 
@@ -113,7 +113,7 @@ class DefaultCurrencyViewController : UITableViewController, Subscriber {
         header.addSubview(rateLabelTitle)
         header.addSubview(rateLabel)
         header.addSubview(bitcoinLabel)
-        header.addSubview(bitcoinSwitch)
+        //header.addSubview(bitcoinSwitch)
 
         rateLabelTitle.constrain([
             rateLabelTitle.leadingAnchor.constraint(equalTo: header.leadingAnchor, constant: C.padding[2]),
@@ -125,7 +125,7 @@ class DefaultCurrencyViewController : UITableViewController, Subscriber {
         bitcoinLabel.constrain([
             bitcoinLabel.leadingAnchor.constraint(equalTo: rateLabelTitle.leadingAnchor),
             bitcoinLabel.topAnchor.constraint(equalTo: rateLabel.bottomAnchor, constant: C.padding[2]) ])
-        bitcoinSwitch.constrain([
+        /*bitcoinSwitch.constrain([
             bitcoinSwitch.leadingAnchor.constraint(equalTo: bitcoinLabel.leadingAnchor),
             bitcoinSwitch.topAnchor.constraint(equalTo: bitcoinLabel.bottomAnchor, constant: C.padding[1]),
             bitcoinSwitch.bottomAnchor.constraint(equalTo: header.bottomAnchor, constant: -C.padding[2]),
@@ -147,14 +147,14 @@ class DefaultCurrencyViewController : UITableViewController, Subscriber {
                     myself.store.perform(action: MaxDigits.set(2))
                 case 1:  //maxis
                     myself.store.perform(action: MaxDigits.set(5))
-                case 2:  //MAX
+                case 2:  //KOIN
                     myself.store.perform(action: MaxDigits.set(8))
-                default: //MAX
+                default: //KOIN
                     myself.store.perform(action: MaxDigits.set(8))
             }
         }
 
-        bitcoinLabel.text = S.DefaultCurrency.bitcoinLabel
+        bitcoinLabel.text = S.DefaultCurrency.bitcoinLabel*/
         rateLabelTitle.text = S.DefaultCurrency.rateLabel
 
         self.header = header

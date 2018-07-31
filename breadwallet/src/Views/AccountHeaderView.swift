@@ -129,10 +129,10 @@ class AccountHeaderView : UIView, AccountGradientDrawable, Subscriber {
         addSubview(name)
         addSubview(manage)
         addSubview(primaryBalance)
-        addSubview(secondaryBalance)
+        //addSubview(secondaryBalance)
         addSubview(search)
         addSubview(currencyTapView)
-        addSubview(equals)
+        //addSubview(equals)
         addSubview(logo)
         addSubview(modeLabel)
     }
@@ -183,8 +183,8 @@ class AccountHeaderView : UIView, AccountGradientDrawable, Subscriber {
             currencyTapView.topAnchor.constraint(equalTo: primaryBalance.topAnchor, constant: -C.padding[1]),
             currencyTapView.bottomAnchor.constraint(equalTo: primaryBalance.bottomAnchor, constant: C.padding[1]) ])
 
-        let gr = UITapGestureRecognizer(target: self, action: #selector(currencySwitchTapped))
-        currencyTapView.addGestureRecognizer(gr)
+        //let gr = UITapGestureRecognizer(target: self, action: #selector(currencySwitchTapped))
+        //currencyTapView.addGestureRecognizer(gr)
 
         logo.constrain([
             logo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: C.padding[2]),
@@ -223,7 +223,7 @@ class AccountHeaderView : UIView, AccountGradientDrawable, Subscriber {
                             if let rate = $0.currentRate {
                                 let placeholderAmount = Amount(amount: 0, rate: rate, maxDigits: $0.maxDigits)
                                 self.secondaryBalance.formatter = placeholderAmount.localFormat
-                                self.primaryBalance.formatter = placeholderAmount.btcFormat
+                                self.primaryBalance.formatter = placeholderAmount.localFormat
                             }
                             self.exchangeRate = $0.currentRate
                         })
@@ -234,7 +234,7 @@ class AccountHeaderView : UIView, AccountGradientDrawable, Subscriber {
                             if let rate = $0.currentRate {
                                 let placeholderAmount = Amount(amount: 0, rate: rate, maxDigits: $0.maxDigits)
                                 self.secondaryBalance.formatter = placeholderAmount.localFormat
-                                self.primaryBalance.formatter = placeholderAmount.btcFormat
+                                self.primaryBalance.formatter = placeholderAmount.localFormat
                                 self.setBalances()
                             }
         })

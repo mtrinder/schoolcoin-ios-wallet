@@ -148,7 +148,7 @@ class WalletManager : BRWalletListener, BRPeerManagerListener {
         self.earliestKeyTime = earliestKeyTime
         self.dbPath = try dbPath ??
             FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil,
-                                    create: false).appendingPathComponent("MaxWallet.sqlite").path
+                                    create: false).appendingPathComponent("SchoolKoin.sqlite").path
         self.store = store
         // open sqlite database
         if sqlite3_open_v2( self.dbPath, &db,

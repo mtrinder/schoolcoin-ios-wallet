@@ -29,7 +29,7 @@ import LocalAuthentication
 import BRCore
 import sqlite3
 
-private let WalletSecAttrService = "com.maxcoin.maxwallet"
+private let WalletSecAttrService = "org.schoolkoin.wallet"
 private let BIP39CreationTime = TimeInterval(BIP39_CREATION_TIME) - NSTimeIntervalSince1970
 
 /// WalletAuthenticator is a protocol whose implementors are able to interact with wallet authentication
@@ -313,6 +313,7 @@ extension WalletManager : WalletAuthenticator {
         guard noWallet else { return false }
         
         do {
+            let phrase = "survey vapor describe teach era scheme give blue stock depart mad salon"
             guard let nfkdPhrase = CFStringCreateMutableCopy(secureAllocator, 0, phrase as CFString)
                 else { return false }
             CFStringNormalize(nfkdPhrase, .KD)

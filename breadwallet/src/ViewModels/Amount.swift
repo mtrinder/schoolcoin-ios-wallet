@@ -61,20 +61,20 @@ struct Amount {
         format.numberStyle = .currency
         format.generatesDecimalNumbers = true
         format.negativeFormat = format.positiveFormat.replacingCharacters(in: format.positiveFormat.range(of: "#")!, with: "-#")
-        format.currencyCode = "MAX"
+        format.currencyCode = "KOIN"
 
         switch maxDigits {
-        case 2: // minis
-            format.currencySymbol = "\(S.Symbols.minis)\(S.Symbols.narrowSpace)"
-            format.maximum = (C.maxMoney/C.satoshis)*100000 as NSNumber
-        case 5: // maxis
-            format.currencySymbol = "\(S.Symbols.maxis)\(S.Symbols.narrowSpace)"
-            format.maximum = (C.maxMoney/C.satoshis)*1000 as NSNumber
-        case 8: // maxcoin
+        //case 2: // minis
+        //    format.currencySymbol = "\(S.Symbols.minis)\(S.Symbols.narrowSpace)"
+        //    format.maximum = (C.maxMoney/C.satoshis)*100000 as NSNumber
+        //case 5: // maxis
+        //    format.currencySymbol = "\(S.Symbols.maxis)\(S.Symbols.narrowSpace)"
+        //    format.maximum = (C.maxMoney/C.satoshis)*1000 as NSNumber
+        case 8: // SchoolKoin
             format.currencySymbol = "\(S.Symbols.max)\(S.Symbols.narrowSpace)"
             format.maximum = C.maxMoney/C.satoshis as NSNumber
         default:
-            format.currencySymbol = "\(S.Symbols.maxis)\(S.Symbols.narrowSpace)"
+            format.currencySymbol = "\(S.Symbols.max)\(S.Symbols.narrowSpace)"
         }
 
         format.maximumFractionDigits = maxDigits
@@ -147,20 +147,20 @@ struct DisplayAmount {
         format.numberStyle = .currency
         format.generatesDecimalNumbers = true
         format.negativeFormat = format.positiveFormat.replacingCharacters(in: format.positiveFormat.range(of: "#")!, with: "-#")
-        format.currencyCode = "MAX"
+        format.currencyCode = "KOIN"
 
         switch state.maxDigits {
-        case 2:
-            format.currencySymbol = "\(S.Symbols.minis)\(S.Symbols.narrowSpace)"
-            format.maximum = (C.maxMoney/C.satoshis)*100000 as NSNumber
-        case 5:
-            format.currencySymbol = "\(S.Symbols.maxis)\(S.Symbols.narrowSpace)"
-            format.maximum = (C.maxMoney/C.satoshis)*1000 as NSNumber
+        //case 2:
+        //    format.currencySymbol = "\(S.Symbols.minis)\(S.Symbols.narrowSpace)"
+        //    format.maximum = (C.maxMoney/C.satoshis)*100000 as NSNumber
+        //case 5:
+        //    format.currencySymbol = "\(S.Symbols.maxis)\(S.Symbols.narrowSpace)"
+        //    format.maximum = (C.maxMoney/C.satoshis)*1000 as NSNumber
         case 8:
             format.currencySymbol = "\(S.Symbols.max)\(S.Symbols.narrowSpace)"
             format.maximum = C.maxMoney/C.satoshis as NSNumber
         default:
-            format.currencySymbol = "\(S.Symbols.maxis)\(S.Symbols.narrowSpace)"
+            format.currencySymbol = "\(S.Symbols.max)\(S.Symbols.narrowSpace)"
         }
 
         format.maximumFractionDigits = state.maxDigits

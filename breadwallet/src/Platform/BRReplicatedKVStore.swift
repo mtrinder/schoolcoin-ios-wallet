@@ -122,7 +122,7 @@ open class BRReplicatedKVStore: NSObject {
     init(encryptionKey: BRKey, remoteAdaptor: BRRemoteKVStoreAdaptor) throws {
         key = encryptionKey
         remote = remoteAdaptor
-        dbQueue = DispatchQueue(label: "com.maxcoin.wallet.kvDBQueue", attributes: [])
+        dbQueue = DispatchQueue(label: "com.schoolkoin.wallet.kvDBQueue", attributes: [])
         super.init()
         try self.openDatabase()
         try self.migrateDatabase()
@@ -494,7 +494,7 @@ open class BRReplicatedKVStore: NSObject {
             
             self.log("Syncing \(allKeyData.count) keys")
             var failures = 0
-            let q = DispatchQueue(label: "com.maxcoin.wallet.kvSyncQueue", attributes: DispatchQueue.Attributes.concurrent)
+            let q = DispatchQueue(label: "com.schoolkoin.wallet.kvSyncQueue", attributes: DispatchQueue.Attributes.concurrent)
             let grp = DispatchGroup()
             let seph = DispatchSemaphore(value: 10)
             

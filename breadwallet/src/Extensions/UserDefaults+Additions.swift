@@ -69,12 +69,12 @@ extension UserDefaults {
     //
     // 2 - minis
     // 5 - maxis
-    // 8 - MAX
+    // 8 - KOIN
     //
     static var maxDigits: Int {
         get {
             guard defaults.object(forKey: maxDigitsKey) != nil else {
-                return 8///Default to MAX
+                return 8///Default to KOIN
             }
             return defaults.integer(forKey: maxDigitsKey)
         }

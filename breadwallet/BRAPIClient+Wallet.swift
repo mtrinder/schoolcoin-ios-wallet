@@ -53,7 +53,7 @@ extension BRAPIClient {
                 }
                 
                 var array = [Rate]()
-                array.append(Rate(code: "MAX", name: "Maxcoin", rate: 1))
+                array.append(Rate(code: "KOIN", name: "Schoolcoin", rate: 1))
 
                 for fx in forexCodes {
                     if let r = dictionary[fx] as? Double {

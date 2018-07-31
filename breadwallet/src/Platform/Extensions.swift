@@ -84,7 +84,7 @@ public extension String {
         }
     }
     
-    // Maxcoin Wallet - Decode WIF Privkey
+    // SchoolKoin Wallet - Decode WIF Privkey
     func base58DecodeCheck() -> Data {
         let len = 37
         var data = Data(count: len)

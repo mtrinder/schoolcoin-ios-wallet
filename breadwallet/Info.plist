@@ -5,37 +5,37 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Maxcoin</string>
+	<string>SchoolKoin</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
 			<key>CFBundleTypeIconFiles</key>
 			<array/>
 			<key>CFBundleTypeName</key>
-			<string>Maxcoin Payment Request</string>
+			<string>SchoolKoin Payment Request</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>maxcoin.paymentrequest</string>
+				<string>schoolkoin.paymentrequest</string>
 			</array>
 		</dict>
 		<dict>
 			<key>CFBundleTypeIconFiles</key>
 			<array/>
 			<key>CFBundleTypeName</key>
-			<string>Maxcoin Payment</string>
+			<string>SchoolKoin Payment</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>maxcoin.payment</string>
+				<string>schoolkoin.payment</string>
 			</array>
 		</dict>
 		<dict>
 			<key>CFBundleTypeIconFiles</key>
 			<array/>
 			<key>CFBundleTypeName</key>
-			<string>Maxcoin Payment ACK</string>
+			<string>SchoolKoin Payment ACK</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>maxcoin.paymentack</string>
+				<string>schoolkoin.paymentack</string>
 			</array>
 		</dict>
 	</array>
@@ -57,20 +57,20 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>maxcoin</string>
+			<string>schoolkoin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>maxcoin</string>
+				<string>schoolkoin</string>
 			</array>
 		</dict>
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.maxcoin.wallet</string>
+			<string>com.schoolkoin.wallet</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>maxcoinwallet</string>
+				<string>schoolkoinwallet</string>
 			</array>
 		</dict>
 		<dict>
@@ -145,13 +145,13 @@
 				<string>public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Maxcoin Payment Request</string>
+			<string>SchoolKoin Payment Request</string>
 			<key>UTTypeIdentifier</key>
-			<string>maxcoin.paymentrequest</string>
+			<string>schoolkoin.paymentrequest</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.mime-type</key>
-				<string>application/maxcoin-paymentrequest</string>
+				<string>application/schoolkoin-paymentrequest</string>
 			</dict>
 		</dict>
 		<dict>
@@ -160,13 +160,13 @@
 				<string>public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Maxcoin Payment</string>
+			<string>SchoolKoin Payment</string>
 			<key>UTTypeIdentifier</key>
-			<string>maxcoin.payment</string>
+			<string>schoolkoin.payment</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.mime-type</key>
-				<string>application/maxcoin-payment</string>
+				<string>application/schoolkoin-payment</string>
 			</dict>
 		</dict>
 		<dict>
@@ -175,13 +175,13 @@
 				<string>public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Maxcoin Payment ACK</string>
+			<string>SchoolKoin Payment ACK</string>
 			<key>UTTypeIdentifier</key>
-			<string>maxcoin.paymentack</string>
+			<string>schoolkoin.paymentack</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.mime-type</key>
-				<string>application/maxcoin-paymentack</string>
+				<string>application/schoolkoin-paymentack</string>
 			</dict>
 		</dict>
 	</array>

@@ -29,8 +29,8 @@
 #import "UIImage+Utils.h"
 #import <NotificationCenter/NotificationCenter.h>
 
-#define SCAN_URL @"maxcoinwallet://x-callback-url/scanqr"
-#define OPEN_URL @"maxcoinwallet://"
+#define SCAN_URL @"schoolkoinwallet://x-callback-url/scanqr"
+#define OPEN_URL @"schoolkoinwallet://"
 
 @interface BRTodayViewController () <NCWidgetProviding>
 

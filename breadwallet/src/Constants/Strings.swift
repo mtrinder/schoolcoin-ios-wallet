@@ -11,22 +11,22 @@ import Foundation
 enum S {
 
     enum Symbols {
-        static let minis = "m̳"
-        static let maxis = "m̲"
-        static let max = "₥"
+        //static let minis = "m̳"
+        //static let maxis = "m̲"
+        static let max = "₭"
         static let narrowSpace = "\u{2009}"
         static let lock = "\u{1F512}"
         static let redX = "\u{274C}"
         static func currencyButtonTitle(maxDigits: Int) -> String {
             switch maxDigits {
-            case 2:
-                return "minis\(S.Symbols.narrowSpace)(\(S.Symbols.minis))"
-            case 5:
-                return "maxis\(S.Symbols.narrowSpace)(\(S.Symbols.maxis))"
+            //case 2:
+            //    return "minis\(S.Symbols.narrowSpace)(\(S.Symbols.minis))"
+            //case 5:
+            //    return "maxis\(S.Symbols.narrowSpace)(\(S.Symbols.maxis))"
             case 8:
-                return "MAX\(S.Symbols.narrowSpace)(\(S.Symbols.max))"
+                return "KOIN\(S.Symbols.narrowSpace)(\(S.Symbols.max))"
             default:
-                return "maxis\(S.Symbols.narrowSpace)(\(S.Symbols.maxis))"
+                return "KOIN\(S.Symbols.narrowSpace)(\(S.Symbols.max))"
             }
         }
     }
@@ -51,7 +51,7 @@ enum S {
     }
 
     enum Scanner {
-        static let flashButtonLabel = NSLocalizedString("Scanner.flashButtonLabel", value:"Camera Flash", comment: "Scan Maxcoin address camera flash toggle")
+        static let flashButtonLabel = NSLocalizedString("Scanner.flashButtonLabel", value:"Camera Flash", comment: "Scan SchoolKoin address camera flash toggle")
     }
 
     enum Send {
@@ -63,17 +63,17 @@ enum S {
         static let pasteLabel = NSLocalizedString("Send.pasteLabel", value:"Paste", comment: "Paste button label")
         static let scanLabel = NSLocalizedString("Send.scanLabel", value:"Scan", comment: "Scan button label")
         static let invalidAddressTitle = NSLocalizedString("Send.invalidAddressTitle", value:"Invalid Address", comment: "Invalid address alert title")
-        static let invalidAddressMessage = NSLocalizedString("Send.invalidAddressMessage", value:"The destination address is not a valid Maxcoin address.", comment: "Invalid address alert message")
-        static let invalidAddressOnPasteboard = NSLocalizedString("Send.invalidAddressOnPasteboard", value: "Pasteboard does not contain a valid Maxcoin address.", comment: "Invalid address on pasteboard message")
+        static let invalidAddressMessage = NSLocalizedString("Send.invalidAddressMessage", value:"The destination address is not a valid SchoolKoin address.", comment: "Invalid address alert message")
+        static let invalidAddressOnPasteboard = NSLocalizedString("Send.invalidAddressOnPasteboard", value: "Pasteboard does not contain a valid SchoolKoin address.", comment: "Invalid address on pasteboard message")
         static let emptyPasteboard = NSLocalizedString("Send.emptyPasteboard", value: "Pasteboard is empty", comment: "Empty pasteboard error message")
-        static let cameraUnavailableTitle = NSLocalizedString("Send.cameraUnavailableTitle", value:"Maxcoin Wallet is not allowed to access the camera", comment: "Camera not allowed alert title")
+        static let cameraUnavailableTitle = NSLocalizedString("Send.cameraUnavailableTitle", value:"SchoolKoin Wallet is not allowed to access the camera", comment: "Camera not allowed alert title")
         static let cameraUnavailableMessage = NSLocalizedString("Send.cameraunavailableMessage", value:"Go to Settings to allow camera access.", comment: "Camera not allowed message")
         static let balance = NSLocalizedString("Send.balance", value:"Balance: %1$@", comment: "Balance: $4.00")
         static let fee = NSLocalizedString("Send.fee", value:"Network Fee: %1$@", comment: "Network Fee: $0.01")
         static let containsAddress = NSLocalizedString("Send.containsAddress", value: "The destination is your own address. You cannot send to yourself.", comment: "Warning when sending to self.")
         enum UsedAddress {
             static let title = NSLocalizedString("Send.UsedAddress.title", value: "Address Already Used", comment: "Adress already used alert title")
-            static let firstLine = NSLocalizedString("Send.UsedAddress.firstLine", value: "Maxcoin addresses are intended for single use only.", comment: "Adress already used alert message - first part")
+            static let firstLine = NSLocalizedString("Send.UsedAddress.firstLine", value: "SchoolKoin addresses are intended for single use only.", comment: "Adress already used alert message - first part")
             static let secondLine = NSLocalizedString("Send.UsedAddress.secondLIne", value: "Re-use reduces privacy for both you and the recipient and can result in loss if the recipient doesn't directly control the address.", comment: "Adress already used alert message - second part")
         }
         static let identityNotCertified = NSLocalizedString("Send.identityNotCertified", value: "Payee identity isn't certified.", comment: "Payee identity not certified alert title.")
@@ -102,8 +102,8 @@ enum S {
 
     enum JailbreakWarnings {
         static let title = NSLocalizedString("JailbreakWarnings.title", value:"WARNING", comment: "Jailbreak warning title")
-        static let messageWithBalance = NSLocalizedString("JailbreakWarnings.messageWithBalance", value:"DEVICE SECURITY COMPROMISED\n Any 'jailbreak' app can access Maxcoin Wallet's keychain data and steal your Maxcoin! Wipe this wallet immediately and restore on a secure device.", comment: "Jailbreak warning message")
-        static let messageWithoutBalance = NSLocalizedString("JailbreakWarnings.messageWithoutBalance", value:"DEVICE SECURITY COMPROMISED\n Any 'jailbreak' app can access Maxcoin Wallet's keychain data and steal your Maxcoin. Please only use Maxcoin Wallet on a non-jailbroken device.", comment: "Jailbreak warning message")
+        static let messageWithBalance = NSLocalizedString("JailbreakWarnings.messageWithBalance", value:"DEVICE SECURITY COMPROMISED\n Any 'jailbreak' app can access SchoolKoin Wallet's keychain data and steal your SchoolKoin! Wipe this wallet immediately and restore on a secure device.", comment: "Jailbreak warning message")
+        static let messageWithoutBalance = NSLocalizedString("JailbreakWarnings.messageWithoutBalance", value:"DEVICE SECURITY COMPROMISED\n Any 'jailbreak' app can access SchoolKoin Wallet's keychain data and steal your SchoolKoin. Please only use SchoolKoin Wallet on a non-jailbroken device.", comment: "Jailbreak warning message")
         static let ignore = NSLocalizedString("JailbreakWarnings.ignore", value:"Ignore", comment: "Ignore jailbreak warning button")
         static let wipe = NSLocalizedString("JailbreakWarnings.wipe", value:"Wipe", comment: "Wipe wallet button")
         static let close = NSLocalizedString("JailbreakWarnings.close", value:"Close", comment: "Close app button")
@@ -120,7 +120,7 @@ enum S {
         static let myAddress = NSLocalizedString("UnlockScreen.myAddress", value:"My Address", comment: "My Address button title")
         static let scan = NSLocalizedString("UnlockScreen.scan", value:"Scan", comment: "Scan button title")
         static let touchIdText = NSLocalizedString("UnlockScreen.touchIdText", value:"Unlock with TouchID", comment: "Unlock with TouchID accessibility label")
-        static let touchIdPrompt = NSLocalizedString("UnlockScreen.touchIdPrompt", value:"Unlock your MAX.", comment: "TouchID/FaceID prompt text")
+        static let touchIdPrompt = NSLocalizedString("UnlockScreen.touchIdPrompt", value:"Unlock your KOIN.", comment: "TouchID/FaceID prompt text")
         static let subheader = NSLocalizedString("UnlockScreen.subheader", value:"Enter PIN", comment: "Unlock Screen sub-header")
         static let unlocked = NSLocalizedString("UnlockScreen.unlocked", value:"Wallet Unlocked", comment: "Wallet unlocked message")
         static let disabled = NSLocalizedString("UnlockScreen.disabled", value:"Disabled until: %1$@", comment: "Disabled until date")
@@ -150,7 +150,7 @@ enum S {
         static let amountHeader = NSLocalizedString("TransactionDetails.amountHeader", value:"Amount", comment: "Amount section header")
         static let emptyMessage = NSLocalizedString("TransactionDetails.emptyMessage", value:"Your transactions will appear here.", comment: "Empty transaction list message.")
         static let more = NSLocalizedString("TransactionDetails.more", value:"More...", comment: "More button title")
-        static let txHashHeader = NSLocalizedString("TransactionDetails.txHashHeader", value:"Maxcoin Transaction ID", comment: "Transaction ID header")
+        static let txHashHeader = NSLocalizedString("TransactionDetails.txHashHeader", value:"SchoolKoin Transaction ID", comment: "Transaction ID header")
         static let sentAmountDescription = NSLocalizedString("TransactionDetails.sentAmountDescription", value: "Sent <b>%1@</b>", comment: "Sent $5.00")
         static let receivedAmountDescription = NSLocalizedString("TransactionDetails.receivedAmountDescription", value: "Received <b>%1@</b>", comment: "Received $5.00")
         static let movedAmountDescription = NSLocalizedString("TransactionDetails.movedAmountDescription", value: "Moved <b>%1@</b>", comment: "Moved $5.00")
@@ -169,11 +169,11 @@ enum S {
         static let info = NSLocalizedString("SecurityCenter.info", value:"Enable all security features for maximum protection.", comment: "Security Center Info")
         enum Cells {
             static let pinTitle = NSLocalizedString("SecurityCenter.pinTitle", value:"6-Digit PIN", comment: "PIN button title")
-            static let pinDescription = NSLocalizedString("SecurityCenter.pinDescription", value:"Protects your Maxcoin Wallet from unauthorized users.", comment: "PIN button description")
+            static let pinDescription = NSLocalizedString("SecurityCenter.pinDescription", value:"Protects your SchoolKoin Wallet from unauthorized users.", comment: "PIN button description")
             static let touchIdTitle = NSLocalizedString("SecurityCenter.touchIdTitle", value:"Touch ID", comment: "Touch ID button title")
-            static let touchIdDescription = NSLocalizedString("SecurityCenter.touchIdDescription", value:"Conveniently unlock your MAX and send money up to a set limit.", comment: "Touch ID/FaceID button description")
+            static let touchIdDescription = NSLocalizedString("SecurityCenter.touchIdDescription", value:"Conveniently unlock your KOIN and send money up to a set limit.", comment: "Touch ID/FaceID button description")
             static let paperKeyTitle = NSLocalizedString("SecurityCenter.paperKeyTitle", value:"Paper Key", comment: "Paper Key button title")
-            static let paperKeyDescription = NSLocalizedString("SecurityCenter.paperKeyDescription", value:"The only way to access your Maxcoin if you lose or upgrade your phone.", comment: "Paper Key button description")
+            static let paperKeyDescription = NSLocalizedString("SecurityCenter.paperKeyDescription", value:"The only way to access your SchoolKoin if you lose or upgrade your phone.", comment: "Paper Key button description")
             static let faceIdTitle = NSLocalizedString("SecurityCenter.faceIdTitle", value:"Face ID", comment: "Face ID button title")
         }
     }
@@ -182,18 +182,18 @@ enum S {
         static let updateTitle = NSLocalizedString("UpdatePin.updateTitle", value:"Update PIN", comment: "Update PIN title")
         static let createTitle = NSLocalizedString("UpdatePin.createTitle", value:"Set PIN", comment: "Update PIN title")
         static let createTitleConfirm = NSLocalizedString("UpdatePin.createTitleConfirm", value:"Re-Enter PIN", comment: "Update PIN title")
-        static let createInstruction = NSLocalizedString("UpdatePin.createInstruction", value:"Your PIN will be used to unlock your Maxcoin Wallet and send money.", comment: "PIN creation info.")
+        static let createInstruction = NSLocalizedString("UpdatePin.createInstruction", value:"Your PIN will be used to unlock your SchoolKoin Wallet and send money.", comment: "PIN creation info.")
         static let enterCurrent = NSLocalizedString("UpdatePin.enterCurrent", value:"Enter your current PIN.", comment: "Enter current PIN instruction")
         static let enterNew = NSLocalizedString("UpdatePin.enterNew", value:"Enter your new PIN.", comment: "Enter new PIN instruction")
         static let reEnterNew = NSLocalizedString("UpdatePin.reEnterNew", value:"Re-Enter your new PIN.", comment: "Re-Enter new PIN instruction")
-        static let caption = NSLocalizedString("UpdatePin.caption", value:"Remember this PIN. If you forget it, you won't be able to access your Maxcoin.", comment: "Update PIN caption text")
+        static let caption = NSLocalizedString("UpdatePin.caption", value:"Remember this PIN. If you forget it, you won't be able to access your SchoolKoin.", comment: "Update PIN caption text")
         static let setPinErrorTitle = NSLocalizedString("UpdatePin.setPinErrorTitle", value:"Update PIN Error", comment: "Update PIN failure alert view title")
         static let setPinError = NSLocalizedString("UpdatePin.setPinError", value:"Sorry, could not update PIN.", comment: "Update PIN failure error message.")
     }
 
     enum RecoverWallet {
         static let next = NSLocalizedString("RecoverWallet.next", value:"Next", comment: "Next button label")
-        static let intro = NSLocalizedString("RecoverWallet.intro", value:"Recover your Maxcoin Wallet with your paper key.", comment: "Recover wallet intro")
+        static let intro = NSLocalizedString("RecoverWallet.intro", value:"Recover your SchoolKoin Wallet with your paper key.", comment: "Recover wallet intro")
         static let leftArrow = NSLocalizedString("RecoverWallet.leftArrow", value:"Left Arrow", comment: "Previous button accessibility label")
         static let rightArrow = NSLocalizedString("RecoverWallet.rightArrow", value:"Right Arrow", comment: "Next button accessibility label")
         static let done = NSLocalizedString("RecoverWallet.done", value:"Done", comment: "Done button text")
@@ -215,7 +215,7 @@ enum S {
     }
 
     enum AccountHeader {
-        static let defaultWalletName = NSLocalizedString("AccountHeader.defaultWalletName", value:"My Maxcoin Wallet", comment: "Default wallet name")
+        static let defaultWalletName = NSLocalizedString("AccountHeader.defaultWalletName", value:"My SchoolKoin Wallet", comment: "Default wallet name")
         static let manageButtonName = NSLocalizedString("AccountHeader.manageButtonName", value:"MANAGE", comment: "Manage wallet button title")
         static let equals = NSLocalizedString("AccountHeader.equals", value:"=", comment: "Equals symbol")
     }
@@ -229,8 +229,8 @@ enum S {
 
     enum TouchIdSettings {
         static let title = NSLocalizedString("TouchIdSettings.title", value:"Touch ID", comment: "Touch ID settings view title")
-        static let label = NSLocalizedString("TouchIdSettings.label", value:"Use your fingerprint to unlock your Maxcoin Wallet and send money up to a set limit.", comment: "Touch Id screen label")
-        static let switchLabel = NSLocalizedString("TouchIdSettings.switchLabel", value:"Enable Touch ID for Maxcoin Wallet", comment: "Touch id switch label.")
+        static let label = NSLocalizedString("TouchIdSettings.label", value:"Use your fingerprint to unlock your SchoolKoin Wallet and send money up to a set limit.", comment: "Touch Id screen label")
+        static let switchLabel = NSLocalizedString("TouchIdSettings.switchLabel", value:"Enable Touch ID for SchoolKoin Wallet", comment: "Touch id switch label.")
         static let unavailableAlertTitle = NSLocalizedString("TouchIdSettings.unavailableAlertTitle", value:"Touch ID Not Set Up", comment: "Touch ID unavailable alert title")
         static let unavailableAlertMessage = NSLocalizedString("TouchIdSettings.unavailableAlertMessage", value:"You have not set up Touch ID on this device. Go to Settings->Touch ID & Passcode to set it up now.", comment: "Touch ID unavailable alert message")
         static let spendingLimit = NSLocalizedString("TouchIdSettings.spendingLimit", value: "Spending limit: %1$@ (%2$@)", comment: "Spending Limit: b100,000 ($100)")
@@ -240,8 +240,8 @@ enum S {
 
     enum FaceIDSettings {
         static let title = NSLocalizedString("FaceIDSettings.title", value:"Face ID", comment: "Face ID settings view title")
-        static let label = NSLocalizedString("FaceIDSettings.label", value:"Use your face to unlock your MAX and send money up to a set limit.", comment: "Face Id screen label")
-        static let switchLabel = NSLocalizedString("FaceIDSettings.switchLabel", value:"Enable Face ID for MAX", comment: "Face id switch label.")
+        static let label = NSLocalizedString("FaceIDSettings.label", value:"Use your face to unlock your KOIN and send money up to a set limit.", comment: "Face Id screen label")
+        static let switchLabel = NSLocalizedString("FaceIDSettings.switchLabel", value:"Enable Face ID for KOIN", comment: "Face id switch label.")
         static let unavailableAlertTitle = NSLocalizedString("FaceIDSettings.unavailableAlertTitle", value:"Face ID Not Set Up", comment: "Face ID unavailable alert title")
         static let unavailableAlertMessage = NSLocalizedString("FaceIDSettings.unavailableAlertMessage", value:"You have not set up Face ID on this device. Go to Settings->Face ID & Passcode to set it up now.", comment: "Face ID unavailable alert message")
         static let customizeText = NSLocalizedString("FaceIDSettings.customizeText", value: "You can customize your Face ID spending limit from the %1$@.", comment: "You can customize your Face ID Spending Limit from the [TouchIdSettings.linkText gets added here as a button]")
@@ -271,7 +271,7 @@ enum S {
         static let earlyAccess = NSLocalizedString("Settings.earlyAccess", value:"Join Early Access", comment: "Join Early access label")
         static let about = NSLocalizedString("Settings.about", value:"About", comment: "About label")
         static let review = NSLocalizedString("Settings.review", value: "Leave us a Review", comment: "Leave review button label")
-        static let enjoying = NSLocalizedString("Settings.enjoying", value: "Are you enjoying Maxcoin Wallet?", comment: "Are you enjoying Maxcoin Wallet alert message body")
+        static let enjoying = NSLocalizedString("Settings.enjoying", value: "Are you enjoying SchoolKoin Wallet?", comment: "Are you enjoying SchoolKoin Wallet alert message body")
         static let wipe = NSLocalizedString("Settings.wipe", value: "Start/Recover Another Wallet", comment: "Start or recover another wallet menu label.")
         static let advancedTitle = NSLocalizedString("Settings.advancedTitle", value: "Advanced Settings", comment: "Advanced Settings title")
         static let faceIdLimit = NSLocalizedString("Settings.faceIdLimit", value:"Face ID Spending Limit", comment: "Face ID spending limit label")
@@ -283,12 +283,12 @@ enum S {
         static let twitter = NSLocalizedString("About.twitter", value:"Twitter", comment: "About screen twitter label")
         static let reddit = NSLocalizedString("About.reddit", value:"Reddit", comment: "About screen reddit label")
         static let privacy = NSLocalizedString("About.privacy", value:"Privacy Policy", comment: "Privay Policy button label")
-        static let footer = NSLocalizedString("About.footer", value:"Thanks to Luke Mitchell & Jordan Fish (the creators\nof Maxcoin) & the global Maxcoin community.\nVersion %1$@", comment: "About screen footer")
+        static let footer = NSLocalizedString("About.footer", value:"Thanks to Luke Mitchell & Jordan Fish (the creators\nof SchoolKoin) & the global SchoolKoin community.\nVersion %1$@", comment: "About screen footer")
     }
 
     enum PushNotifications {
         static let title = NSLocalizedString("PushNotifications.title", value:"Notifications", comment: "Push notifications settings view title label")
-        static let body = NSLocalizedString("PushNotifications.body", value:"Turn on notifications to receive special messages from Maxcoin Wallet in the future.", comment: "Push notifications settings view body")
+        static let body = NSLocalizedString("PushNotifications.body", value:"Turn on notifications to receive special messages from SchoolKoin Wallet in the future.", comment: "Push notifications settings view body")
         static let label = NSLocalizedString("PushNotifications.label", value:"Push Notifications", comment: "Push notifications toggle switch label")
         static let on = NSLocalizedString("PushNotifications.on", value: "On", comment: "Push notifications are on label")
         static let off = NSLocalizedString("PushNotifications.off", value: "Off", comment: "Push notifications are off label")
@@ -296,7 +296,7 @@ enum S {
 
     enum DefaultCurrency {
         static let rateLabel = NSLocalizedString("DefaultCurrency.rateLabel", value:"Exchange Rate", comment: "Exchange rate label")
-        static let bitcoinLabel = NSLocalizedString("DefaultCurrency.bitcoinLabel", value: "Maxcoin Display Unit", comment: "Maxcoin denomination picker label")
+        static let bitcoinLabel = NSLocalizedString("DefaultCurrency.bitcoinLabel", value: "SchoolKoin Display Unit", comment: "SchoolKoin denomination picker label")
     }
 
     enum SyncingView {
@@ -309,7 +309,7 @@ enum S {
         static let subheader1 = NSLocalizedString("ReScan.subheader1", value:"Estimated time", comment: "Subheader label")
         static let subheader2 = NSLocalizedString("ReScan.subheader2", value:"When to Sync?", comment: "Subheader label")
         static let body1 = NSLocalizedString("ReScan.body1", value:"20-45 minutes", comment: "extimated time")
-        static let body2 = NSLocalizedString("ReScan.body2", value:"If a transaction shows as completed on the Maxcoin network but not in your Maxcoin Wallet.", comment: "Syncing explanation")
+        static let body2 = NSLocalizedString("ReScan.body2", value:"If a transaction shows as completed on the SchoolKoin network but not in your SchoolKoin Wallet.", comment: "Syncing explanation")
         static let body3 = NSLocalizedString("ReScan.body3", value:"You repeatedly get an error saying your transaction was rejected.", comment: "Syncing explanation")
         static let buttonTitle = NSLocalizedString("ReScan.buttonTitle", value:"Start Sync", comment: "Start Sync button label")
         static let footer = NSLocalizedString("ReScan.footer", value:"You will not be able to send money while syncing with the blockchain.", comment: "Sync blockchain view footer")
@@ -320,7 +320,7 @@ enum S {
 
     enum ShareData {
         static let header = NSLocalizedString("ShareData.header", value:"Share Data?", comment: "Share data header")
-        static let body = NSLocalizedString("ShareData.body", value:"Help improve Maxcoin Wallet by sharing your anonymous data with us. This does not include any financial information. We respect your financial privacy.", comment: "Share data view body")
+        static let body = NSLocalizedString("ShareData.body", value:"Help improve SchoolKoin Wallet by sharing your anonymous data with us. This does not include any financial information. We respect your financial privacy.", comment: "Share data view body")
         static let toggleLabel = NSLocalizedString("ShareData.toggleLabel", value:"Share Anonymous Data?", comment: "Share data switch label.")
     }
 
@@ -331,7 +331,7 @@ enum S {
     }
 
     enum StartPaperPhrase {
-        static let body = NSLocalizedString("StartPaperPhrase.body", value:"Your paper key is the only way to restore your Maxcoin Wallet if your phone is lost, stolen, broken, or upgraded.\n\nWe will show you a list of words to write down on a piece of paper and keep safe.", comment: "Paper key explanation text.")
+        static let body = NSLocalizedString("StartPaperPhrase.body", value:"Your paper key is the only way to restore your SchoolKoin Wallet if your phone is lost, stolen, broken, or upgraded.\n\nWe will show you a list of words to write down on a piece of paper and keep safe.", comment: "Paper key explanation text.")
         static let buttonTitle = NSLocalizedString("StartPaperPhrase.buttonTitle", value:"Write Down Paper Key", comment: "button label")
         static let againButtonTitle = NSLocalizedString("StartPaperPhrase.againButtonTitle", value:"Write Down Paper Key Again", comment: "button label")
         static let date = NSLocalizedString("StartPaperPhrase.date", value:"You last wrote down your paper key on %1$@", comment: "Argument is date")
@@ -350,7 +350,7 @@ enum S {
     }
 
     enum RequestAnAmount {
-        static let title = NSLocalizedString("RequestAnAmount.title", value:"Request an Amount", comment: "Request a specific amount of Maxcoin")
+        static let title = NSLocalizedString("RequestAnAmount.title", value:"Request an Amount", comment: "Request a specific amount of SchoolKoin")
         static let noAmount = NSLocalizedString("RequestAnAmount.noAmount", value: "Please enter an amount first.", comment: "No amount entered error message.")
     }
 
@@ -370,7 +370,7 @@ enum S {
         static let support = NSLocalizedString("MenuButton.support", value:"Support", comment: "Menu button title")
         static let settings = NSLocalizedString("MenuButton.settings", value:"Settings", comment: "Menu button title")
         static let lock = NSLocalizedString("MenuButton.lock", value:"Lock Wallet", comment: "Menu button title")
-        static let buy = NSLocalizedString("MenuButton.buy", value:"Buy Maxcoin", comment: "Buy Maxcoin title")
+        static let buy = NSLocalizedString("MenuButton.buy", value:"Buy SchoolKoin", comment: "Buy SchoolKoin title")
     }
 
     enum MenuViewController {
@@ -380,7 +380,7 @@ enum S {
     enum StartViewController {
         static let createButton = NSLocalizedString("MenuViewController.createButton", value:"Create New Wallet", comment: "button label")
         static let recoverButton = NSLocalizedString("MenuViewController.recoverButton", value:"Recover Wallet", comment: "button label")
-        static let message = NSLocalizedString("StartViewController.message", value: "The most secure and safest way to use Maxcoin.", comment: "Start view message")
+        static let message = NSLocalizedString("StartViewController.message", value: "The most secure and safest way to use SchoolKoin.", comment: "Start view message")
     }
 
     enum AccessibilityLabels {
@@ -389,7 +389,7 @@ enum S {
     }
 
     enum Watch {
-        static let noWalletWarning = NSLocalizedString("Watch.noWalletWarning", value: "Open the Maxcoin Wallet iPhone app to set up your wallet.", comment: "'No wallet' warning for watch app")
+        static let noWalletWarning = NSLocalizedString("Watch.noWalletWarning", value: "Open the SchoolKoin Wallet iPhone app to set up your wallet.", comment: "'No wallet' warning for watch app")
     }
 
     enum Search {
@@ -410,7 +410,7 @@ enum S {
         }
         enum UpgradePin {
             static let title = NSLocalizedString("Prompts.UpgradePin.title", value: "Upgrade PIN", comment: "Upgrade PIN prompt title.")
-            static let body = NSLocalizedString("Prompts.UpgradePin.body", value: "Maxcoin Wallet has upgraded to using a 6-digit PIN. Tap here to upgrade.", comment: "Upgrade PIN prompt body.")
+            static let body = NSLocalizedString("Prompts.UpgradePin.body", value: "SchoolKoin Wallet has upgraded to using a 6-digit PIN. Tap here to upgrade.", comment: "Upgrade PIN prompt body.")
         }
         enum RecommendRescan {
             static let title = NSLocalizedString("Prompts.RecommendRescan.title", value: "Transaction Rejected", comment: "Transaction rejected prompt title")
@@ -422,7 +422,7 @@ enum S {
         }
         enum ShareData {
             static let title = NSLocalizedString("Prompts.ShareData.title", value: "Share Anonymous Data", comment: "Share data prompt title")
-            static let body = NSLocalizedString("Prompts.ShareData.body", value: "Help improve Maxcoin Wallet by sharing your anonymous data with us", comment: "Share data prompt body")
+            static let body = NSLocalizedString("Prompts.ShareData.body", value: "Help improve SchoolKoin Wallet by sharing your anonymous data with us", comment: "Share data prompt body")
         }
         enum FaceId {
             static let title = NSLocalizedString("Prompts.FaceId.title", value: "Enable Face ID", comment: "Enable face ID prompt title")
@@ -438,8 +438,8 @@ enum S {
             static let requestExpired = NSLocalizedString("PaymentProtocol.Errors.requestExpired", value: "request expired", comment: "Request expired payment protocol error message")
             static let badPaymentRequest = NSLocalizedString("PaymentProtocol.Errors.badPaymentRequest", value: "Bad Payment Request", comment: "Bad Payment request alert title")
             static let smallOutputErrorTitle = NSLocalizedString("PaymentProtocol.Errors.smallOutputError", value: "Couldn't make payment", comment: "Payment too small alert title")
-            static let smallPayment = NSLocalizedString("PaymentProtocol.Errors.smallPayment", value: "Maxcoin payments can't be less than %1$@.", comment: "Amount too small error message")
-            static let smallTransaction = NSLocalizedString("PaymentProtocol.Errors.smallTransaction", value: "Maxcoin transaction outputs can't be less than $@.", comment: "Output too small error message.")
+            static let smallPayment = NSLocalizedString("PaymentProtocol.Errors.smallPayment", value: "SchoolKoin payments can't be less than %1$@.", comment: "Amount too small error message")
+            static let smallTransaction = NSLocalizedString("PaymentProtocol.Errors.smallTransaction", value: "SchoolKoin transaction outputs can't be less than $@.", comment: "Output too small error message.")
             static let corruptedDocument = NSLocalizedString("PaymentProtocol.Errors.corruptedDocument", value: "Unsupported or corrupted document", comment: "Error opening payment protocol file message")
         }
     }
@@ -463,7 +463,7 @@ enum S {
 
     enum LocationPlugin {
         static let disabled = NSLocalizedString("LocationPlugin.disabled", value: "Location services are disabled.", comment: "Location services disabled error")
-        static let notAuthorized = NSLocalizedString("LocationPlugin.notAuthorized", value: "Maxcoin Wallet does not have permission to access location services.", comment: "No permissions for location services")
+        static let notAuthorized = NSLocalizedString("LocationPlugin.notAuthorized", value: "SchoolKoin Wallet does not have permission to access location services.", comment: "No permissions for location services")
     }
 
     enum Webview {
@@ -482,13 +482,13 @@ enum S {
 
     enum Import {
         static let leftCaption = NSLocalizedString("Import.leftCaption", value: "Wallet to be imported", comment: "Caption for graphics")
-        static let rightCaption = NSLocalizedString("Import.rightCaption", value: "Your Maxcoin Wallet Wallet", comment: "Caption for graphics")
-        static let importMessage = NSLocalizedString("Import.message", value: "Importing a wallet transfers all the money from your other wallet into your Maxcoin Wallet wallet using a single transaction.", comment: "Import wallet intro screen message")
+        static let rightCaption = NSLocalizedString("Import.rightCaption", value: "Your SchoolKoin Wallet Wallet", comment: "Caption for graphics")
+        static let importMessage = NSLocalizedString("Import.message", value: "Importing a wallet transfers all the money from your other wallet into your SchoolKoin Wallet wallet using a single transaction.", comment: "Import wallet intro screen message")
         static let importWarning = NSLocalizedString("Import.warning", value: "Importing a wallet does not include transaction history or other details.", comment: "Import wallet intro warning message")
         static let scan = NSLocalizedString("Import.scan", value: "Scan Private Key", comment: "Scan Private key button label")
         static let title = NSLocalizedString("Import.title", value: "Import Wallet", comment: "Import Wallet screen title")
         static let importing = NSLocalizedString("Import.importing", value: "Importing Wallet", comment: "Importing wallet progress view label")
-        static let confirm = NSLocalizedString("Import.confirm", value: "Send %1$@ from this private key into your wallet? The Maxcoin network will receive a fee of %2$@.", comment: "Sweep private key confirmation message")
+        static let confirm = NSLocalizedString("Import.confirm", value: "Send %1$@ from this private key into your wallet? The SchoolKoin network will receive a fee of %2$@.", comment: "Sweep private key confirmation message")
         static let checking = NSLocalizedString("Import.checking", value: "Checking private key balance...", comment: "Checking private key balance progress view text")
         static let password = NSLocalizedString("Import.password", value: "This private key is password protected.", comment: "Enter password alert view title")
         static let passwordPlaceholder = NSLocalizedString("Import.passwordPlaceholder", value: "password", comment: "password textfield placeholder")
@@ -508,7 +508,7 @@ enum S {
 
     enum BitID {
         static let title = NSLocalizedString("BitID.title", value: "BitID Authentication Request", comment: "BitID Authentication Request alert view title")
-        static let authenticationRequest = NSLocalizedString("BitID.authenticationRequest", value: "%1$@ is requesting authentication using your Maxcoin wallet", comment: "<sitename> is requesting authentication using your Maxcoin wallet")
+        static let authenticationRequest = NSLocalizedString("BitID.authenticationRequest", value: "%1$@ is requesting authentication using your SchoolKoin wallet", comment: "<sitename> is requesting authentication using your SchoolKoin wallet")
         static let deny = NSLocalizedString("BitID.deny", value: "Deny", comment: "Deny button label")
         static let approve = NSLocalizedString("BitID.approve", value: "Approve", comment: "Approve button label")
         static let success = NSLocalizedString("BitID.success", value: "Successfully Authenticated", comment: "BitID success alert title")
@@ -526,7 +526,7 @@ enum S {
         static let failedTitle = NSLocalizedString("WipeWallet.failedTitle", value: "Failed", comment: "Failed wipe wallet alert title")
         static let failedMessage = NSLocalizedString("WipeWallet.failedMessage", value: "Failed to wipe wallet.", comment: "Failed wipe wallet alert message")
         static let instruction = NSLocalizedString("WipeWallet.instruction", value: "To start a new wallet or restore an existing wallet, you must first erase the wallet that is currently installed. To continue, enter the current wallet's Paper Key.", comment: "Enter key to wipe wallet instruction.")
-        static let startMessage = NSLocalizedString("WipeWallet.startMessage", value: "Starting or recovering another wallet allows you to access and manage a different Maxcoin Wallet wallet on this device.", comment: "Start wipe wallet view message")
+        static let startMessage = NSLocalizedString("WipeWallet.startMessage", value: "Starting or recovering another wallet allows you to access and manage a different SchoolKoin Wallet wallet on this device.", comment: "Start wipe wallet view message")
         static let startWarning = NSLocalizedString("WipeWallet.startWarning", value: "Your current wallet will be removed from this device. If you wish to restore it in the future, you will need to enter your Paper Key.", comment: "Start wipe wallet view warning")
     }
 
@@ -565,7 +565,7 @@ enum S {
     enum NodeSelector {
         static let manualButton = NSLocalizedString("NodeSelector.manualButton", value: "Switch to Manual Mode", comment: "Switch to manual mode button label")
         static let automaticButton = NSLocalizedString("NodeSelector.automaticButton", value: "Switch to Automatic Mode", comment: "Switch to automatic mode button label")
-        static let title = NSLocalizedString("NodeSelector.title", value: "Maxcoin Nodes", comment: "Node Selector view title")
+        static let title = NSLocalizedString("NodeSelector.title", value: "SchoolKoin Nodes", comment: "Node Selector view title")
         static let nodeLabel = NSLocalizedString("NodeSelector.nodeLabel", value: "Current Primary Node", comment: "Node address label")
         static let statusLabel = NSLocalizedString("NodeSelector.statusLabel", value: "Node Connection Status", comment: "Node status label")
         static let connected = NSLocalizedString("NodeSelector.connected", value: "Connected", comment: "Node is connected label")
@@ -575,7 +575,7 @@ enum S {
     }
 
     enum Welcome {
-        static let title = NSLocalizedString("Welcome.title", value: "Welcome to Maxcoin Wallet", comment: "Welcome view title")
-        static let body = NSLocalizedString("Welcome.body", value: "All coins are displayed in MAX (₥). 1 maxcoin (₥) = 1000 maxi (m̲).", comment: "Welcome view body text")
+        static let title = NSLocalizedString("Welcome.title", value: "Welcome to SchoolKoin Wallet", comment: "Welcome view title")
+        static let body = NSLocalizedString("Welcome.body", value: "All amounts are displayed in KOIN (₭). 1 SchoolKoin (₭) = 1 dollar.", comment: "Welcome view body text")
     }
 }

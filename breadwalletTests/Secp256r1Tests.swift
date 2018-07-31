@@ -22,7 +22,7 @@ class Secp256r1Tests: XCTestCase {
         super.tearDown()
     }
 
-    func testMaxcoinSchnorrGenerateKeyPair() {
+    func testKoinSchnorrGenerateKeyPair() {
         let curveAndSig = BRSchnorr()
         curveAndSig.GenerateKeyPair()
         var key = BRKey(privKey: curveAndSig.GetPrivateKey())
@@ -30,14 +30,14 @@ class Secp256r1Tests: XCTestCase {
         XCTAssertTrue(priv!.count > 0)
     }
     
-    func testMaxcoinPrivKeyIsValid() {
+    func testKoinPrivKeyIsValid() {
         let privkey = "5JCDKoPn2Ymd2RZQDCJXnwPnRzwRTEohBgZyeV35ycxaZwDyzrc"
         guard let nfkdPhrase = CFStringCreateMutableCopy(secureAllocator, 0, privkey as CFString) else { return }
         CFStringNormalize(nfkdPhrase, .KD)
         XCTAssertTrue(MWPrivKeyIsValid(nfkdPhrase as String) == 1)
     }
 
-    func testMaxcoinPubKeyWithSchnorr() {
+    func testKoinPubKeyWithSchnorr() {
         
         let privKeyWIF = "5JfUbmJzRbqxdHuxW5KMSBfWAhh1vsg7bFxeFYW7kGiqWUEHqWR"
         let pubKeyCompressed = "mJfNtNZWFdV2zPM6fVW9Pk41XUnWjCSRoz"
@@ -63,7 +63,7 @@ class Secp256r1Tests: XCTestCase {
         XCTAssertTrue(key?.addressMW() == pubKeyCompressed)
     }
 
-    func testMaxcoinMWKeyPubKey() {
+    func testKoinMWKeyPubKey() {
         
         let privKeyWIF = "5JfUbmJzRbqxdHuxW5KMSBfWAhh1vsg7bFxeFYW7kGiqWUEHqWR"
         let pubKeyCompressed = "mJfNtNZWFdV2zPM6fVW9Pk41XUnWjCSRoz"
@@ -83,7 +83,7 @@ class Secp256r1Tests: XCTestCase {
         XCTAssertTrue(keyWithPublicKey?.addressMW() == pubKeyCompressed)
     }
     
-    func testMaxcoinBIP39() {
+    func testKoinBIP39() {
         var key = BRKey()
         var seed = UInt512()
         
@@ -113,7 +113,7 @@ class Secp256r1Tests: XCTestCase {
         XCTAssertTrue(privKeyTest == privKeyWIF)
     }
     
-    func testMaxcoinBIP32MasterPubKey() {
+    func testKoinBIP32MasterPubKey() {
         var seed = UInt512()
 
         let phrase = "kind butter gasp around unfair tape again suit else example toast orphan"
@@ -128,7 +128,7 @@ class Secp256r1Tests: XCTestCase {
         XCTAssertTrue(masterPubKey.fingerPrint == 935776041)
     }
     
-    func testMaxcoinBIP32PubKey() {
+    func testKoinBIP32PubKey() {
         var seed = UInt512()
 
         let phrase = "kind butter gasp around unfair tape again suit else example toast orphan"
@@ -154,7 +154,7 @@ class Secp256r1Tests: XCTestCase {
         XCTAssertTrue(pubAddress == "mbpy574cfB5Jv3rSZecY3cQtxBEsztNRxn")
     }
     
-    func testMaxcoinSchnorrSignatures() {
+    func testKoinSchnorrSignatures() {
         let privKeyWIF = "5JfUbmJzRbqxdHuxW5KMSBfWAhh1vsg7bFxeFYW7kGiqWUEHqWR"
         let length = 64 // Schnorr signatures are 64 bytes long
         

@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>SchoolKoin</string>
+	<string>School Koin</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>

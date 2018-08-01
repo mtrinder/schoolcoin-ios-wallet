@@ -26,19 +26,29 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="ZCd-WZ-H0t">
-                                <rect key="frame" x="109" y="270" width="157" height="126"/>
+                                <rect key="frame" x="109" y="280" width="157" height="106"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School Koin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOZ-J9-B5d">
+                                <rect key="frame" x="104" y="408" width="167" height="35"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="jUk-zo-wxl" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="1XD-La-M2f"/>
+                            <constraint firstItem="uOZ-J9-B5d" firstAttribute="centerX" secondItem="ZCd-WZ-H0t" secondAttribute="centerX" id="6Qx-nh-1Ei"/>
                             <constraint firstItem="ZCd-WZ-H0t" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="93" id="HO5-1h-Gud"/>
                             <constraint firstItem="jUk-zo-wxl" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Hgz-we-2c1"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="jUk-zo-wxl" secondAttribute="bottom" id="KFa-Tr-fv3"/>
+                            <constraint firstItem="uOZ-J9-B5d" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="88" id="OEx-me-e2O"/>
                             <constraint firstItem="jUk-zo-wxl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Rw0-rk-cVE"/>
+                            <constraint firstItem="uOZ-J9-B5d" firstAttribute="top" secondItem="ZCd-WZ-H0t" secondAttribute="bottom" constant="22" id="Trc-Gb-0CV"/>
                             <constraint firstItem="ZCd-WZ-H0t" firstAttribute="centerY" secondItem="jUk-zo-wxl" secondAttribute="centerY" id="XtT-Bi-jPb"/>
                             <constraint firstItem="ZCd-WZ-H0t" firstAttribute="centerX" secondItem="jUk-zo-wxl" secondAttribute="centerX" id="YIp-gU-707"/>
-                            <constraint firstItem="ZCd-WZ-H0t" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="250" id="agm-AK-VpF"/>
+                            <constraint firstItem="ZCd-WZ-H0t" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="260" id="agm-AK-VpF"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="uOZ-J9-B5d" secondAttribute="bottom" constant="224" id="xa3-RR-zgd"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -49,7 +59,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="1024" height="1024"/>
+        <image name="Logo" width="60" height="60"/>
         <image name="SplashGradient" width="640" height="272"/>
     </resources>
 </document>

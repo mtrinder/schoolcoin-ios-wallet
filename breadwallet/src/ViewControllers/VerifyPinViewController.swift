@@ -91,7 +91,7 @@ class VerifyPinViewController : UIViewController, ContentBoxPresenter {
     }
 
     private func setupSubviews() {
-        contentBox.backgroundColor = .white
+        contentBox.backgroundColor = .grayTextTint
         contentBox.layer.cornerRadius = 8.0
         contentBox.layer.borderWidth = 1.0
         contentBox.layer.borderColor = UIColor.secondaryShadow.cgColor

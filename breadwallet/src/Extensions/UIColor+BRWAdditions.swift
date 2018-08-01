@@ -12,7 +12,7 @@ extension UIColor {
 
     // MARK: Buttons
     static var primaryButton: UIColor {
-        return UIColor(red: 76.0/255.0, green: 152.0/255.0, blue: 252.0/255.0, alpha: 1.0)
+        return .blue
     }
 
     static var primaryText: UIColor {
@@ -41,19 +41,19 @@ extension UIColor {
 
     // MARK: Gradient
     static var gradientStart: UIColor {
-        return UIColor(red: 56.0/255.0, green: 55.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        return UIColor(red: 62.0/255.0, green: 57.0/255.0, blue: 167.0/255.0, alpha: 1.0)
     }
 
     static var gradientEnd: UIColor {
-        return UIColor(red: 192.0/255.0, green: 192.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        return UIColor(red: 170.0/255.0, green: 170.0/255.0, blue: 255.0/255.0, alpha: 1.0)
     }
 
     static var accountGradientStart: UIColor {
-        return UIColor(red: 56.0/255.0, green: 55.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        return UIColor(red: 62.0/255.0, green: 57.0/255.0, blue: 167.0/255.0, alpha: 1.0)
     }
     
     static var accountGradientEnd: UIColor {
-        return UIColor(red: 192.0/255.0, green: 192.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        return UIColor(red: 170.0/255.0, green: 170.0/255.0, blue: 255.0/255.0, alpha: 1.0)
     }
 
     static var offWhite: UIColor {
@@ -93,7 +93,7 @@ extension UIColor {
     }
 
     static var purple: UIColor {
-        return UIColor(red: 209.0/255.0, green: 125.0/255.0, blue: 245.0/255.0, alpha: 1.0)
+        return UIColor(red: 62.0/255.0, green: 57.0/255.0, blue: 167.0/255.0, alpha: 1.0)
     }
 
     static var darkPurple: UIColor {
@@ -105,7 +105,7 @@ extension UIColor {
     }
 
     static var blue: UIColor {
-        return UIColor(red: 56.0/255.0, green: 55.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        return UIColor(red: 114.0/255.0, green: 57.0/255.0, blue: 167.0/255.0, alpha: 1.0)
     }
 
     static var whiteTint: UIColor {
@@ -120,6 +120,14 @@ extension UIColor {
         return UIColor(white: 0.0, alpha: 0.3)
     }
 
+    static var grayGradientStart: UIColor {
+        return UIColor(red: 100.0/255.0, green: 100.0/255.0, blue: 100.0/255.0, alpha: 1.0)
+    }
+    
+    static var grayGradientEnd: UIColor {
+        return UIColor(red: 50.0/255.0, green: 50.0/255.0, blue: 50.0/255.0, alpha: 1.0)
+    }
+    
     static var blueGradientStart: UIColor {
         return UIColor(red: 99.0/255.0, green: 188.0/255.0, blue: 255.0/255.0, alpha: 1.0)
     }

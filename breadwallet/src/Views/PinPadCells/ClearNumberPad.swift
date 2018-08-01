@@ -20,9 +20,9 @@ class ClearNumberPad : GenericPinPadCell {
             centerLabel.isHidden = true
         }
 
-        topLabel.textColor = UIColor.blue
-        centerLabel.textColor = UIColor.blue
-        sublabel.textColor = UIColor.blue
+        topLabel.textColor = UIColor.white
+        centerLabel.textColor = UIColor.white
+        sublabel.textColor = UIColor.white
 
         if isHighlighted {
             backgroundColor = .transparentBlack
@@ -33,7 +33,7 @@ class ClearNumberPad : GenericPinPadCell {
             if text == "" || text == deleteKeyIdentifier {
                 backgroundColor = .clear
                 imageView.image = imageView.image?.withRenderingMode(.alwaysTemplate)
-                imageView.tintColor = UIColor.blue
+                imageView.tintColor = UIColor.white
             } else {
                 backgroundColor = .transparentWhite
             }

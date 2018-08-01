@@ -39,7 +39,7 @@ class PinView : UIView {
         case .login:
             unFilled = (0...(length-1)).map { _ in Circle(color: .black) }
         }
-        filled = (0...(length-1)).map { _ in Circle(color: UIColor.blue) }
+        filled = (0...(length-1)).map { _ in Circle(color: UIColor.white) }
         super.init(frame: CGRect())
         setupSubviews()
     }

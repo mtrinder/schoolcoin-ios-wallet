@@ -48,7 +48,7 @@ class StartViewController : UIViewController {
         message.lineBreakMode = .byWordWrapping
         message.numberOfLines = 0
         message.textAlignment = .center
-        message.textColor = UIColor.black
+        message.textColor = UIColor.white
         faq.tintColor = .whiteTint
         version.text = AppVersion.string
         version.textAlignment = .left

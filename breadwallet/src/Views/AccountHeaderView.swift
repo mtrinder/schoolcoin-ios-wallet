@@ -10,7 +10,7 @@ import UIKit
 
 private let largeFontSize: CGFloat = 26.0
 private let smallFontSize: CGFloat = 13.0
-private let logoWidth: CGFloat = 0.30 //percentage of width
+private let logoWidth: CGFloat = 0.50 //percentage of width
 
 class AccountHeaderView : UIView, AccountGradientDrawable, Subscriber {
 
@@ -129,10 +129,10 @@ class AccountHeaderView : UIView, AccountGradientDrawable, Subscriber {
         addSubview(name)
         addSubview(manage)
         addSubview(primaryBalance)
-        //addSubview(secondaryBalance)
+        addSubview(secondaryBalance)
         addSubview(search)
         addSubview(currencyTapView)
-        //addSubview(equals)
+        addSubview(equals)
         addSubview(logo)
         addSubview(modeLabel)
     }
@@ -153,7 +153,7 @@ class AccountHeaderView : UIView, AccountGradientDrawable, Subscriber {
         primaryBalance.translatesAutoresizingMaskIntoConstraints = false
 
         regularConstraints = [
-            primaryBalance.firstBaselineAnchor.constraint(equalTo: bottomAnchor, constant: -C.padding[4]),
+            primaryBalance.firstBaselineAnchor.constraint(equalTo: bottomAnchor, constant: -C.padding[2]),
             primaryBalance.leadingAnchor.constraint(equalTo: leadingAnchor, constant: C.padding[2]),
             equals.firstBaselineAnchor.constraint(equalTo: primaryBalance.firstBaselineAnchor),
             equals.leadingAnchor.constraint(equalTo: primaryBalance.trailingAnchor, constant: C.padding[1]/2.0),
@@ -188,8 +188,8 @@ class AccountHeaderView : UIView, AccountGradientDrawable, Subscriber {
 
         logo.constrain([
             logo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: C.padding[2]),
-            logo.leftAnchor.constraint(equalTo: leftAnchor, constant: -25.0),
-            logo.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -C.padding[8]),
+            logo.leftAnchor.constraint(equalTo: leftAnchor, constant: -55.0),
+            logo.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -C.padding[6]),
             logo.heightAnchor.constraint(equalTo: logo.widthAnchor, multiplier: C.Sizes.logoAspectRatio),
             logo.widthAnchor.constraint(equalTo: widthAnchor, multiplier: logoWidth) ])
         modeLabel.constrain([
@@ -223,7 +223,7 @@ class AccountHeaderView : UIView, AccountGradientDrawable, Subscriber {
                             if let rate = $0.currentRate {
                                 let placeholderAmount = Amount(amount: 0, rate: rate, maxDigits: $0.maxDigits)
                                 self.secondaryBalance.formatter = placeholderAmount.localFormat
-                                self.primaryBalance.formatter = placeholderAmount.localFormat
+                                self.primaryBalance.formatter = placeholderAmount.btcFormat
                             }
                             self.exchangeRate = $0.currentRate
                         })
@@ -234,7 +234,7 @@ class AccountHeaderView : UIView, AccountGradientDrawable, Subscriber {
                             if let rate = $0.currentRate {
                                 let placeholderAmount = Amount(amount: 0, rate: rate, maxDigits: $0.maxDigits)
                                 self.secondaryBalance.formatter = placeholderAmount.localFormat
-                                self.primaryBalance.formatter = placeholderAmount.localFormat
+                                self.primaryBalance.formatter = placeholderAmount.btcFormat
                                 self.setBalances()
                             }
         })
@@ -297,12 +297,12 @@ class AccountHeaderView : UIView, AccountGradientDrawable, Subscriber {
 
     private func hideExtraViews() {
         var didHide = false
-        if secondaryBalance.frame.maxX > search.frame.minX {
+        //if secondaryBalance.frame.maxX > search.frame.minX {
             secondaryBalance.isHidden = true
             didHide = true
-        } else {
-            secondaryBalance.isHidden = false
-        }
+        //} else {
+        //    secondaryBalance.isHidden = false
+        //}
 
         if primaryBalance.frame.maxX > search.frame.minX {
             primaryBalance.isHidden = true

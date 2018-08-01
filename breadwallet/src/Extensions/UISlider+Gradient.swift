@@ -12,7 +12,7 @@ extension UISlider {
     func addGradientTrack() {
         superview?.layoutIfNeeded()
         setMaximumTrackImage(imageForColors(colors: [UIColor.grayTextTint.cgColor, UIColor.grayTextTint.cgColor], offset: 4.0), for: .normal)
-        setMinimumTrackImage(imageForColors(colors: [UIColor.gradientStart.cgColor, UIColor.gradientEnd.cgColor]), for: .normal)
+        setMinimumTrackImage(imageForColors(colors: [UIColor.gradientEnd.cgColor, UIColor.gradientStart.cgColor]), for: .normal)
     }
 
     private func imageForColors(colors: [CGColor], offset: CGFloat = 0.0) -> UIImage? {

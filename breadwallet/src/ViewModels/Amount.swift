@@ -71,13 +71,13 @@ struct Amount {
         //    format.currencySymbol = "\(S.Symbols.maxis)\(S.Symbols.narrowSpace)"
         //    format.maximum = (C.maxMoney/C.satoshis)*1000 as NSNumber
         case 8: // SchoolKoin
-            format.currencySymbol = "\(S.Symbols.max)\(S.Symbols.narrowSpace)"
+            format.currencySymbol = "KOIN\(S.Symbols.narrowSpace)(\(S.Symbols.max)) "
             format.maximum = C.maxMoney/C.satoshis as NSNumber
         default:
             format.currencySymbol = "\(S.Symbols.max)\(S.Symbols.narrowSpace)"
         }
 
-        format.maximumFractionDigits = maxDigits
+        format.maximumFractionDigits = 2 //maxDigits
         format.minimumFractionDigits = 0 // iOS 8 bug, minimumFractionDigits now has to be set after currencySymbol
         format.maximum = Decimal(C.maxMoney)/(pow(10.0, maxDigits)) as NSNumber
 
@@ -163,7 +163,7 @@ struct DisplayAmount {
             format.currencySymbol = "\(S.Symbols.max)\(S.Symbols.narrowSpace)"
         }
 
-        format.maximumFractionDigits = state.maxDigits
+        format.maximumFractionDigits = 2 //state.maxDigits
         if let minimumFractionDigits = minimumFractionDigits {
             format.minimumFractionDigits = minimumFractionDigits
         }

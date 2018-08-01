@@ -32,7 +32,7 @@ class UpdatePinViewController : UIViewController, Subscriber {
         self.faq.tintColor = UIColor.white
         self.type = type
         super.init(nibName: nil, bundle: nil)
-        self.view.backgroundColor = UIColor.lightGray
+        self.view.backgroundColor = UIColor.primaryButton
     }
 
     //MARK: - Private

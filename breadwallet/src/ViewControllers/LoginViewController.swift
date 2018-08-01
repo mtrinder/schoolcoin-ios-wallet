@@ -66,7 +66,7 @@ class LoginViewController : UIViewController, Subscriber, Trackable {
         button.accessibilityLabel = LAContext.biometricType() == .face ? S.UnlockScreen.faceIdText : S.UnlockScreen.touchIdText
         return button
     }()
-    private let subheader = UILabel(font: .customBody(size: 16.0), color: .darkText)
+    private let subheader = UILabel(font: .customBody(size: 16.0), color: .primaryText)
     private var pinPadPottom: NSLayoutConstraint?
     private var topControlTop: NSLayoutConstraint?
     private var unlockTimer: Timer?
@@ -177,6 +177,7 @@ class LoginViewController : UIViewController, Subscriber, Trackable {
         } else {
             view.addSubview(activityView)
         }
+        topControlContainer.isHidden = true
     }
 
     private func addConstraints() {
@@ -273,12 +274,12 @@ class LoginViewController : UIViewController, Subscriber, Trackable {
     private func authenticationSucceded() {
         saveEvent("login.success")
         let label = UILabel(font: subheader.font)
-        label.textColor = UIColor.blue
+        label.textColor = UIColor.white
         label.text = S.UnlockScreen.unlocked
         label.alpha = 0.0
         let lock = UIImageView(image: #imageLiteral(resourceName: "unlock"))
         lock.image = lock.image!.withRenderingMode(.alwaysTemplate)
-        lock.tintColor = UIColor.blue
+        lock.tintColor = UIColor.white
         lock.alpha = 0.0
 
         view.addSubview(label)

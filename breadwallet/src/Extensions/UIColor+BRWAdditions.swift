@@ -105,7 +105,7 @@ extension UIColor {
     }
 
     static var blue: UIColor {
-        return UIColor(red: 114.0/255.0, green: 57.0/255.0, blue: 167.0/255.0, alpha: 1.0)
+        return .gradientEnd
     }
 
     static var whiteTint: UIColor {

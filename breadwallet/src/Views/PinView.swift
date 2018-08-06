@@ -35,7 +35,7 @@ class PinView : UIView {
         self.length = length
         switch style {
         case .create:
-            unFilled = (0...(length-1)).map { _ in Circle(color: .borderGray) }
+            unFilled = (0...(length-1)).map { _ in Circle(color: .gradientStart) }
         case .login:
             unFilled = (0...(length-1)).map { _ in Circle(color: .black) }
         }
